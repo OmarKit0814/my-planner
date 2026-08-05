@@ -219,6 +219,21 @@ nav.tabbar{
 .toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%) translateY(20px);background:rgba(20,22,28,.92);color:#fff;padding:10px 18px;border-radius:24px;font-size:13px;opacity:0;transition:.25s;z-index:200;pointer-events:none;max-width:80%;text-align:center;}
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
 .empty-hint{text-align:center;color:var(--ink-2);padding:40px 16px;font-size:13px;}
+
+/* 体重 / 减肥记录 */
+.weight-add{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;font-size:15px;margin-bottom:12px;}
+.weight-add svg{width:20px;height:20px;}
+.weight-chart{margin-bottom:12px;padding:10px 6px;}
+.weight-chart svg{display:block;}
+.weight-delta{font-size:12px;color:var(--ink-2);text-align:center;margin-bottom:8px;}
+.weight-row{display:flex;align-items:center;gap:10px;padding:11px 12px;background:var(--panel);border-radius:12px;margin-bottom:8px;}
+.weight-row .wi{width:34px;height:34px;border-radius:10px;background:var(--panel-2);display:flex;align-items:center;justify-content:center;color:var(--brand);flex:0 0 auto;}
+.weight-row .wi svg{width:18px;height:18px;}
+.weight-row .wmain{flex:1;min-width:0;}
+.weight-row .wt{font-size:15px;font-weight:600;}
+.weight-row .wd{font-size:12px;color:var(--ink-2);}
+.weight-row .del{width:30px;height:30px;flex:0 0 auto;color:#e5484d;display:flex;align-items:center;justify-content:center;}
+.weight-row .del svg{width:17px;height:17px;}
 </style>
 </head>
 <body>
@@ -300,6 +315,9 @@ nav.tabbar{
         </div>
       </div>
     </section>
+
+    <!-- 视图：体重 -->
+    <section class="view" id="view-weight"></section>
   </main>
 
   <nav class="tabbar">
@@ -307,6 +325,7 @@ nav.tabbar{
     <button data-view="plan"><span class="tg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 7a2 2 0 012-2h4l2 2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span>长期计划</button>
     <button data-view="sp"><span class="tg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-4.5-7-10a4 4 0 017-2.6A4 4 0 0119 11c0 5.5-7 10-7 10z"/></svg></span>特殊日</button>
     <button data-view="me"><span class="tg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></span>我的</button>
+    <button data-view="weight"><span class="tg"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 6V4h10v2M12 10v5M9 12h6"/></svg></span>体重</button>
   </nav>
 </div>
 
@@ -443,17 +462,20 @@ const ICONS={
   cal:'<rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/>',
   range:'<path d="M3 7h18M3 12h18M3 17h18"/>',
   delay:'<path d="M21 12a9 9 0 11-3-6.7M21 4v4h-4"/>',
-  arrange:'<path d="M4 6h16M4 12h16M4 18h16M9 6v12"/>'
+  arrange:'<path d="M4 6h16M4 12h16M4 18h16M9 6v12"/>',
+  scale:'<rect x="3" y="6" width="18" height="13" rx="2"/><path d="M7 6V4h10v2M12 10v5M9 12h6"/>',
+  chart:'<path d="M4 19h16M4 19V5M7 15l4-5 3 3 5-7"/>'
 };
 function svg(name){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICONS[name]||ICONS.star}</svg>`;}
 
 /* ---------- 状态 & 存储 ---------- */
 const STORE='myPlanner.v1';
-let state={todos:[],specialDays:[],longPlan:[],settings:{theme:'light',gist:{token:'',id:'',enabled:false}}};
+let state={todos:[],specialDays:[],longPlan:[],weightLog:[],settings:{theme:'light',gist:{token:'',id:'',enabled:false}}};
 let planCurFolder=null;
 function load(){try{const s=JSON.parse(localStorage.getItem(STORE));if(s)state=Object.assign(structuredClone(state),s);}catch(e){}
   // 清理已移除类型的残留记录
   state.specialDays=state.specialDays.filter(d=>SP_TYPES[d.type]);
+  state.weightLog=state.weightLog||[];
   // 生日字段补全（兼容旧数据：缺 month/day 时由 date / lunarMD 推导）
   state.specialDays.forEach(d=>{
     if(d.type==='birthday'){
@@ -500,6 +522,7 @@ async function pullGist(){
     if(incoming.todos)state.todos=incoming.todos;
     if(incoming.specialDays)state.specialDays=incoming.specialDays;
     if(incoming.longPlan)state.longPlan=incoming.longPlan;
+    if(incoming.weightLog)state.weightLog=incoming.weightLog;
     if(incoming.settings&&incoming.settings.theme)state.settings.theme=incoming.settings.theme;
     save();renderAll();toast('已从云端拉取');
   }catch(e){toast('拉取失败：'+e.message);}
@@ -816,11 +839,15 @@ function renderSp(){
     c.addEventListener('click',()=>openSpForm(s.type,s));
   });
 }
-function inputDialog(title,defaultText){
+function inputDialog(title,defaultText,opts){
   return new Promise(resolve=>{
+    opts=opts||{};
     const m=$('#inputModal');
     m.querySelector('.msg').textContent=title;
     const inp=m.querySelector('input');
+    inp.type=opts.type||'text';
+    inp.inputMode=opts.inputMode||'text';
+    inp.placeholder=opts.placeholder||'';
     inp.value=defaultText||'';
     m.classList.add('open');
     setTimeout(()=>inp.focus(),50);
@@ -848,6 +875,89 @@ async function deleteSp(id){
   state.specialDays=state.specialDays.filter(x=>x.id!==id);
   save();renderSp();renderCalendar();toast('已删除');
   return true;
+}
+
+/* ---------- 体重 / 减肥记录 ---------- */
+function todayStr(){const d=new Date();return fmt(d.getFullYear(),d.getMonth()+1,d.getDate());}
+function getWeight(dateStr){return state.weightLog.find(w=>w.date===dateStr);}
+function renderWeight(){
+  const v=$('#view-weight');
+  const today=todayStr();
+  const list=[...state.weightLog].sort((a,b)=>a.date<b.date?-1:1);
+  const recent=list.slice().reverse().slice(0,12);
+  let totalDelta='';
+  if(list.length>=2){
+    const diff=list[0].jin-list[list.length-1].jin;
+    totalDelta=(diff>0?'-':'+')+Math.abs(diff).toFixed(1)+' 斤';
+  }
+  let html='';
+  const td=parseD(today);
+  html+=`<button class="btn weight-add" id="btnWeightAdd">${svg('scale')}<span>记录今日体重（${td.m}月${td.d}日）</span></button>`;
+  html+=`<div class="card weight-chart">${weightChartSVG(list)}</div>`;
+  if(list.length){
+    if(totalDelta)html+=`<div class="weight-delta">累计变化：${totalDelta}</div>`;
+    html+=`<div>`;
+    html+=recent.map(w=>{const wd=parseD(w.date);return `<div class="weight-row" data-date="${w.date}">
+      <div class="wi">${svg('chart')}</div>
+      <div class="wmain"><div class="wt">${w.jin} 斤</div><div class="wd">${wd.m}月${wd.d}日</div></div>
+      <button class="del" data-del="${w.date}" aria-label="删除">${svg('trash')}</button>
+    </div>`;}).join('');
+    html+=`</div>`;
+  }else{
+    html+=`<div class="empty-hint">还没有记录，点上面按钮记下今天的体重吧～</div>`;
+  }
+  v.innerHTML=html;
+  $('#btnWeightAdd').addEventListener('click',()=>promptWeight(today));
+  $$('#view-weight .weight-row').forEach(r=>{
+    r.addEventListener('click',e=>{if(e.target.closest('.del'))return;promptWeight(r.dataset.date);});
+    const del=r.querySelector('.del');
+    if(del)del.addEventListener('click',e=>{e.stopPropagation();deleteWeight(r.dataset.date);});
+  });
+}
+async function promptWeight(dateStr){
+  const cur=getWeight(dateStr);
+  const def=cur?String(cur.jin):'';
+  const d=parseD(dateStr);
+  const v=await inputDialog('记录体重（'+d.m+'月'+d.d+'日）',def,{type:'number',inputMode:'decimal',placeholder:'斤，如 140'});
+  if(v==null)return;
+  const n=parseFloat(v);
+  if(isNaN(n)||n<50||n>400){toast('请输入 50–400 之间的数字');return;}
+  if(cur){cur.jin=n;cur.updated=Date.now();}
+  else{state.weightLog.push({id:'w'+Date.now(),date:dateStr,jin:n,updated:Date.now()});}
+  save();renderWeight();toast('已保存');
+}
+async function deleteWeight(dateStr){
+  const ok=await confirmDialog('确定删除这条体重记录？');
+  if(!ok)return;
+  state.weightLog=state.weightLog.filter(w=>w.date!==dateStr);
+  save();renderWeight();toast('已删除');
+}
+function weightChartSVG(list){
+  if(!list.length)return '<div class="empty-hint">记录至少 1 天体重后，这里会显示趋势曲线</div>';
+  const W=320,H=180,padL=34,padR=12,padT=14,padB=24;
+  const x0=padL,x1=W-padR,y0=padT,y1=H-padB;
+  const vals=list.map(w=>w.jin);
+  let min=Math.min(...vals),max=Math.max(...vals);
+  if(min===max){min-=1;max+=1;}
+  const n=list.length;
+  const x=i=> n===1? (x0+x1)/2 : x0+(x1-x0)*i/(n-1);
+  const y=v=> y1-(y1-y0)*(v-min)/(max-min);
+  let grid='';
+  for(let k=0;k<=2;k++){
+    const gv=min+(max-min)*k/2,gy=y(gv);
+    grid+=`<line x1="${x0}" y1="${gy}" x2="${x1}" y2="${gy}" stroke="var(--line)" stroke-width="1"/>`;
+    grid+=`<text x="${x0-5}" y="${gy+3}" text-anchor="end" font-size="9" fill="var(--ink-2)">${gv.toFixed(0)}</text>`;
+  }
+  let path='';
+  list.forEach((w,i)=>{path+=(i?'L':'M')+x(i).toFixed(1)+' '+y(w.jin).toFixed(1)+' ';});
+  let dots='';
+  list.forEach((w,i)=>{
+    const cx=x(i).toFixed(1),cy=y(w.jin).toFixed(1);
+    const wd=parseD(w.date);
+    dots+=`<circle cx="${cx}" cy="${cy}" r="3" fill="var(--brand)"/>`;
+    if(i===0||i===n-1||n<=6)dots+=`<text x="${cx}" y="${y1+14}" text-anchor="middle" font-size="9" fill="var(--ink-2)">${wd.m}/${wd.d}</text>`;
+  });
+  return `<svg viewBox="0 0 ${W} ${H}" width="100%" preserveAspectRatio="xMidYMid meet">${grid}<path d="${path}" fill="none" stroke="var(--brand)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>${dots}</svg>`;
 }
 function openSpTypePicker(){
   const items=Object.keys(SP_TYPES).map(k=>`<div class="sp-type" data-type="${k}">
@@ -1042,7 +1152,7 @@ document.addEventListener('touchstart',e=>{lastTouch={x:e.touches[0].clientX,y:e
 /* ===================================================================
    导航 & 顶栏 & 初始化
    =================================================================== */
-const VIEWS={cal:{t:'月历',s:'点击日期查看/添加待办与特殊日'},plan:{t:'长期计划',s:'文件夹式管理，长按安排日期'},sp:{t:'特殊日',s:'生日/考试/缴费… 自动同步月历'},me:{t:'我的',s:'主题 · 云端同步 · 备份'}};
+const VIEWS={cal:{t:'月历',s:'点击日期查看/添加待办与特殊日'},plan:{t:'长期计划',s:'文件夹式管理，长按安排日期'},sp:{t:'特殊日',s:'生日/考试/缴费… 自动同步月历'},weight:{t:'体重',s:'记录每日体重 · 减肥趋势曲线'},me:{t:'我的',s:'主题 · 云端同步 · 备份'}};
 function switchView(v){
   $$('.tabbar button').forEach(b=>b.classList.toggle('active',b.dataset.view===v));
   $$('.view').forEach(s=>s.classList.toggle('active',s.id==='view-'+v));
@@ -1074,7 +1184,7 @@ $('#daySheet .grip').addEventListener('click',closeDay);
 $('#overlay').addEventListener('click',e=>{if(e.target===$('#overlay'))closeSheet();});
 $('#overlay2').addEventListener('click',e=>{if(e.target===$('#overlay2'))closeSheet2();});
 
-function renderAll(){renderCalendar();renderPlan();renderSpChips();renderSp();
+function renderAll(){renderCalendar();renderPlan();renderSpChips();renderSp();renderWeight();
   $('#gistToken').value=state.settings.gist.token||'';$('#gistId').value=state.settings.gist.id||'';
   $('#swSync').classList.toggle('on',state.settings.gist.enabled);
   $('#syncCard').style.display=state.settings.gist.enabled?'block':'none';
