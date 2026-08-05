@@ -918,14 +918,15 @@ function renderWeight(){
     if(del)del.addEventListener('click',e=>{e.stopPropagation();deleteWeight(r.dataset.date);});
   });
 }
-async function backfillWeight(){
+function backfillWeight(){
   const d=new Date(); d.setDate(d.getDate()-1);
-  const def=fmt(d.getFullYear(),d.getMonth()+1,d.getDate());
-  const ds=await inputDialog('补填哪一天的体重？',def,{type:'date'});
-  if(!ds)return;
-  if(!/^\d{4}-\d{2}-\d{2}$/.test(ds)){toast('日期格式不正确');return;}
-  if(ds>todayStr()){toast('不能填未来的日期');return;}
-  promptWeight(ds);
+  openDatePicker(new Date(d.getFullYear(),d.getMonth(),d.getDate()),
+    (y,m,dd)=>{
+      const ds=fmt(y,m,dd);
+      if(ds>todayStr()){toast('不能填未来的日期');return;}
+      promptWeight(ds);
+    },
+    '补填哪一天的体重？');
 }
 async function promptWeight(dateStr){
   const cur=getWeight(dateStr);
