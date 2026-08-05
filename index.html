@@ -895,6 +895,7 @@ function renderWeight(){
   let html='';
   const td=parseD(today);
   html+=`<button class="btn weight-add" id="btnWeightAdd">${svg('scale')}<span>记录今日体重（${td.m}月${td.d}日）</span></button>`;
+  html+=`<button class="btn ghost weight-add" id="btnWeightBackfill" style="margin-top:10px;display:flex;align-items:center;justify-content:center;gap:8px;">${svg('cal')}<span>补填往日体重</span></button>`;
   html+=`<div class="card weight-chart">${weightChartSVG(list)}</div>`;
   if(list.length){
     if(totalDelta)html+=`<div class="weight-delta">累计变化：${totalDelta}</div>`;
@@ -910,11 +911,21 @@ function renderWeight(){
   }
   v.innerHTML=html;
   $('#btnWeightAdd').addEventListener('click',()=>promptWeight(today));
+  const bf=$('#btnWeightBackfill');if(bf)bf.addEventListener('click',backfillWeight);
   $$('#view-weight .weight-row').forEach(r=>{
     r.addEventListener('click',e=>{if(e.target.closest('.del'))return;promptWeight(r.dataset.date);});
     const del=r.querySelector('.del');
     if(del)del.addEventListener('click',e=>{e.stopPropagation();deleteWeight(r.dataset.date);});
   });
+}
+async function backfillWeight(){
+  const d=new Date(); d.setDate(d.getDate()-1);
+  const def=fmt(d.getFullYear(),d.getMonth()+1,d.getDate());
+  const ds=await inputDialog('补填哪一天的体重？',def,{type:'date'});
+  if(!ds)return;
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(ds)){toast('日期格式不正确');return;}
+  if(ds>todayStr()){toast('不能填未来的日期');return;}
+  promptWeight(ds);
 }
 async function promptWeight(dateStr){
   const cur=getWeight(dateStr);
