@@ -476,6 +476,8 @@ function load(){try{const s=JSON.parse(localStorage.getItem(STORE));if(s)state=O
   // 清理已移除类型的残留记录
   state.specialDays=state.specialDays.filter(d=>SP_TYPES[d.type]);
   state.weightLog=state.weightLog||[];
+  // 旧数据以「斤」存储，统一换算为「千克（kg）」：1 斤 = 0.5 kg
+  state.weightLog.forEach(w=>{ if(w.jin!=null && w.kg==null){ w.kg=+(w.jin*0.5).toFixed(1); delete w.jin; } });
   // 生日字段补全（兼容旧数据：缺 month/day 时由 date / lunarMD 推导）
   state.specialDays.forEach(d=>{
     if(d.type==='birthday'){
@@ -887,8 +889,8 @@ function renderWeight(){
   const recent=list.slice().reverse().slice(0,12);
   let totalDelta='';
   if(list.length>=2){
-    const diff=list[0].jin-list[list.length-1].jin;
-    totalDelta=(diff>0?'-':'+')+Math.abs(diff).toFixed(1)+' 斤';
+    const diff=list[0].kg-list[list.length-1].kg;
+    totalDelta=(diff>0?'-':'+')+Math.abs(diff).toFixed(1)+' kg';
   }
   let html='';
   const td=parseD(today);
@@ -899,7 +901,7 @@ function renderWeight(){
     html+=`<div>`;
     html+=recent.map(w=>{const wd=parseD(w.date);return `<div class="weight-row" data-date="${w.date}">
       <div class="wi">${svg('chart')}</div>
-      <div class="wmain"><div class="wt">${w.jin} 斤</div><div class="wd">${wd.m}月${wd.d}日</div></div>
+      <div class="wmain"><div class="wt">${w.kg} kg</div><div class="wd">${wd.m}月${wd.d}日</div></div>
       <button class="del" data-del="${w.date}" aria-label="删除">${svg('trash')}</button>
     </div>`;}).join('');
     html+=`</div>`;
@@ -916,14 +918,14 @@ function renderWeight(){
 }
 async function promptWeight(dateStr){
   const cur=getWeight(dateStr);
-  const def=cur?String(cur.jin):'';
+  const def=cur?String(cur.kg):'';
   const d=parseD(dateStr);
-  const v=await inputDialog('记录体重（'+d.m+'月'+d.d+'日）',def,{type:'number',inputMode:'decimal',placeholder:'斤，如 140'});
+  const v=await inputDialog('记录体重（'+d.m+'月'+d.d+'日）',def,{type:'number',inputMode:'decimal',placeholder:'千克，如 70'});
   if(v==null)return;
   const n=parseFloat(v);
-  if(isNaN(n)||n<50||n>400){toast('请输入 50–400 之间的数字');return;}
-  if(cur){cur.jin=n;cur.updated=Date.now();}
-  else{state.weightLog.push({id:'w'+Date.now(),date:dateStr,jin:n,updated:Date.now()});}
+  if(isNaN(n)||n<20||n>300){toast('请输入 20–300 之间的数字');return;}
+  if(cur){cur.kg=n;cur.updated=Date.now();}
+  else{state.weightLog.push({id:'w'+Date.now(),date:dateStr,kg:n,updated:Date.now()});}
   save();renderWeight();toast('已保存');
 }
 async function deleteWeight(dateStr){
@@ -936,7 +938,7 @@ function weightChartSVG(list){
   if(!list.length)return '<div class="empty-hint">记录至少 1 天体重后，这里会显示趋势曲线</div>';
   const W=320,H=180,padL=34,padR=12,padT=14,padB=24;
   const x0=padL,x1=W-padR,y0=padT,y1=H-padB;
-  const vals=list.map(w=>w.jin);
+  const vals=list.map(w=>w.kg);
   let min=Math.min(...vals),max=Math.max(...vals);
   if(min===max){min-=1;max+=1;}
   const n=list.length;
@@ -949,10 +951,10 @@ function weightChartSVG(list){
     grid+=`<text x="${x0-5}" y="${gy+3}" text-anchor="end" font-size="9" fill="var(--ink-2)">${gv.toFixed(0)}</text>`;
   }
   let path='';
-  list.forEach((w,i)=>{path+=(i?'L':'M')+x(i).toFixed(1)+' '+y(w.jin).toFixed(1)+' ';});
+  list.forEach((w,i)=>{path+=(i?'L':'M')+x(i).toFixed(1)+' '+y(w.kg).toFixed(1)+' ';});
   let dots='';
   list.forEach((w,i)=>{
-    const cx=x(i).toFixed(1),cy=y(w.jin).toFixed(1);
+    const cx=x(i).toFixed(1),cy=y(w.kg).toFixed(1);
     const wd=parseD(w.date);
     dots+=`<circle cx="${cx}" cy="${cy}" r="3" fill="var(--brand)"/>`;
     if(i===0||i===n-1||n<=6)dots+=`<text x="${cx}" y="${y1+14}" text-anchor="middle" font-size="9" fill="var(--ink-2)">${wd.m}/${wd.d}</text>`;
