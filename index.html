@@ -247,6 +247,9 @@ nav.tabbar{
       <button class="iconbtn" id="btnToday" title="回到今天">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
       </button>
+      <button class="iconbtn" id="btnRefresh" title="刷新 / 检查更新">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-2.64-6.36"/><path d="M21 3v6h-6"/></svg>
+      </button>
       <button class="iconbtn" id="btnAdd" title="新建">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
       </button>
@@ -1178,6 +1181,7 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','
 /* 顶栏按钮 */
 $('#btnAdd').addEventListener('click',()=>{if($('.view.active').id==='view-sp')openSpTypePicker();});
 $('#btnToday').addEventListener('click',()=>{curY=new Date().getFullYear();curM=new Date().getMonth()+1;renderCalendar();});
+$('#btnRefresh').addEventListener('click',()=>{toast('正在刷新…');const base=location.href.split('?')[0];location.href=base+'?_='+Date.now();});
 $('#calPrev').addEventListener('click',()=>{curM--;if(curM<1){curM=12;curY--;}renderCalendar();});
 $('#calNext').addEventListener('click',()=>{curM++;if(curM>12){curM=1;curY++;}renderCalendar();});
 $$('.tabbar button').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
