@@ -130,6 +130,10 @@ nav.tabbar{
 .todo-row .del{flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--red);background:rgba(229,72,77,.12);}
 .todo-row .del:active{background:rgba(229,72,77,.22);}
 .todo-row .del svg{width:15px;height:15px;stroke:var(--red);}
+.todo-row{cursor:grab;touch-action:none;}
+.todo-row .chk,.todo-row .del{cursor:pointer;}
+.todo-row.dragging{opacity:.92;box-shadow:0 6px 16px rgba(0,0,0,.2);transform:scale(1.02);background:var(--panel);cursor:grabbing;position:relative;z-index:5;}
+.todo-hint{font-size:11px;color:var(--ink-2);opacity:.7;margin:0 0 6px;}
 .addbar{display:flex;gap:8px;margin:8px 0 4px;}
 .addbar input{flex:1;background:var(--panel-2);border:1px solid var(--line);border-radius:10px;padding:10px;outline:none;}
 
@@ -475,6 +479,10 @@ function svg(name){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentC
 const STORE='myPlanner.v1';
 let state={todos:[],specialDays:[],longPlan:[],weightLog:[],settings:{theme:'light',gist:{token:'',id:'',enabled:false}}};
 let planCurFolder=null;
+let curOpenDay=null;
+let dragActive=false;
+function normTodoOrder(){const seen={};state.todos.forEach(t=>{if(t.order==null){t.order=(seen[t.date]=(seen[t.date]??-1)+1);}});}
+function todosOf(dateStr){return state.todos.filter(t=>t.date===dateStr).sort((a,b)=>(a.order??1e9)-(b.order??1e9));}
 function load(){try{const s=JSON.parse(localStorage.getItem(STORE));if(s)state=Object.assign(structuredClone(state),s);}catch(e){}
   // 清理已移除类型的残留记录
   state.specialDays=state.specialDays.filter(d=>SP_TYPES[d.type]);
@@ -491,6 +499,7 @@ function load(){try{const s=JSON.parse(localStorage.getItem(STORE));if(s)state=O
       if(d.year===undefined)d.year=null;
     }
   });
+  normTodoOrder();
 }
 function save(){localStorage.setItem(STORE,JSON.stringify(state));if(state.settings.gist.enabled)syncGist();}
 function exportJSON(){const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='planner-backup.json';a.click();}
@@ -529,6 +538,7 @@ async function pullGist(){
     if(incoming.longPlan)state.longPlan=incoming.longPlan;
     if(incoming.weightLog)state.weightLog=incoming.weightLog;
     if(incoming.settings&&incoming.settings.theme)state.settings.theme=incoming.settings.theme;
+    normTodoOrder();
     save();renderAll();toast('已从云端拉取');
   }catch(e){toast('拉取失败：'+e.message);}
 }
@@ -645,7 +655,7 @@ function cell(y,m,d,other){
   const ls=lunarDayStr(lm);
   const fests=festivalsFor(y,m,d);
   const dateStr=fmt(y,m,d);
-  const dayTodos=state.todos.filter(t=>t.date===dateStr);
+  const dayTodos=todosOf(dateStr);
   const sps=state.specialDays.filter(s=>spMatchesDate(s,y,m,d));
   const isToday=(new Date().getFullYear()===y&&new Date().getMonth()+1===m&&new Date().getDate()===d);
   const todoHtml=dayTodos.slice(0,2).map(t=>`<div class="t${t.done?' done':''}">${esc(t.text)}</div>`).join('')+(dayTodos.length>2?`<div class="t">+${dayTodos.length-2}</div>`:'');
@@ -664,10 +674,11 @@ function cell(y,m,d,other){
 }
 function openDay(y,m,d){
   y=+y;m=+m;d=+d;
+  curOpenDay=[y,m,d];
   const dateStr=fmt(y,m,d);const dt=new Date(y,m-1,d);
   const fests=festivalsFor(y,m,d);const lm=solarToLunar(y,m,d);
   const sps=state.specialDays.filter(s=>spMatchesDate(s,y,m,d));
-  const dayTodos=state.todos.filter(t=>t.date===dateStr);
+  const dayTodos=todosOf(dateStr);
   let html=`<div class="ds-head"><div class="dt">${y}年${m}月${d}日 周${WD[dt.getDay()]}</div>
     <button class="iconbtn" onclick="closeDay()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>`;
   html+=`<div class="note">农历 ${lunarDayStr(lm)} ｜ 节日：${fests.length?fests.join('、'):'无'}</div>`;
@@ -675,22 +686,57 @@ function openDay(y,m,d){
   if(!sps.length)html+=`<div class="empty-hint">当天没有特殊日</div>`;
   sps.forEach(s=>{html+=`<div class="sp-item"><div class="ic">${svg(SP_TYPES[s.type].icon)}</div><div class="meta"><div class="ti">${esc(spTitle(s))}</div><div class="de">${esc(spDetail(s))}</div></div><button class="del" title="删除" aria-label="删除" onclick="deleteSp('${s.id}').then(ok=>{if(ok)openDay(${y},${m},${d});});">${svg('trash')}</button></div>`;});
   html+=`<div class="section-title"><span class="ln"></span>当日待办（${dayTodos.length}）</div>`;
+  html+=`<div class="todo-hint">按住待办上下拖动可调整当天顺序</div>`;
   dayTodos.forEach(t=>{html+=`<div class="todo-row ${t.done?'done':''}" data-id="${t.id}">
     <div class="chk" onclick="toggleTodo('${t.id}')">${t.done?'✓':''}</div>
     <div class="txt" ondblclick="editTodo('${t.id}')">${esc(t.text)}</div>
     <button class="del" title="删除" aria-label="删除" onclick="deleteTodo('${t.id}').then(ok=>{if(ok)openDay(${y},${m},${d});});">${svg('trash')}</button></div>`;});
   html+=`<div class="addbar"><input id="newTodo" placeholder="添加 ${m}月${d}日 待办" /><button class="btn" onclick="addTodo('${dateStr}')">添加</button></div>`;
   $('#dayBody').innerHTML=html;
-  $$('#dayBody .todo-row').forEach(r=>{const tid=r.dataset.id;longPress(r,()=>showCtx([
+  $$('#dayBody .todo-row').forEach(r=>{const tid=r.dataset.id;longPress(r,()=>{if(dragActive)return;showCtx([
     {icon:'edit',label:'编辑',fn:()=>editTodo(tid)},
     {icon:'delay',label:'延后日期',fn:()=>delayTodo(tid)},
     {icon:'trash',label:'删除',fn:()=>deleteTodo(tid).then(ok=>{if(ok)openDay(y,m,d);})}
-  ]));});
+  ]);});});
+  enableTodoDrag();
   $('#daySheet').classList.add('open');
 }
 function closeDay(){$('#daySheet').classList.remove('open');}
+function enableTodoDrag(){
+  $$('#dayBody .todo-row').forEach(row=>{
+    let sy=0,sx=0,drag=false,pid=null;
+    row.addEventListener('pointerdown',e=>{
+      if(e.target.closest('.chk')||e.target.closest('.del'))return;
+      sy=e.clientY;sx=e.clientX;drag=false;pid=e.pointerId;
+      try{row.setPointerCapture(pid);}catch(_){}
+    });
+    row.addEventListener('pointermove',e=>{
+      if(pid===null)return;
+      const dx=e.clientX-sx,dy=e.clientY-sy;
+      if(!drag){ if(Math.abs(dx)<8&&Math.abs(dy)<8)return; drag=true;dragActive=true;row.classList.add('dragging');lpSuppress=true; }
+      e.preventDefault();
+      const others=[...$$('#dayBody .todo-row')].filter(r=>r!==row);
+      let ref=null;
+      for(const r of others){const b=r.getBoundingClientRect();if(e.clientY<b.top+b.height/2){ref=r;break;}}
+      if(ref)row.parentNode.insertBefore(row,ref);else row.parentNode.appendChild(row);
+    });
+    const end=()=>{
+      if(pid===null)return;
+      try{row.releasePointerCapture(pid);}catch(_){}
+      pid=null;
+      if(drag){drag=false;dragActive=false;row.classList.remove('dragging');
+        const all=[...$$('#dayBody .todo-row')];
+        all.forEach((r,i)=>{const t=state.todos.find(x=>x.id===r.dataset.id);if(t)t.order=i;});
+        save();renderCalendar();
+        if(curOpenDay)openDay(curOpenDay[0],curOpenDay[1],curOpenDay[2]);
+      }
+    };
+    row.addEventListener('pointerup',end);
+    row.addEventListener('pointercancel',end);
+  });
+}
 function spTitle(s){const t=SP_TYPES[s.type];const f=t.fields.find(x=>x.k==='name'||x.k==='who');return s[f?f.k:'']||t.label;}
-function addTodo(date){const v=$('#newTodo').value.trim();if(!v)return;state.todos.push({id:uid(),date,text:v,done:false});save();openDay(...date.split('-').map(Number));renderCalendar();}
+function addTodo(date){const v=$('#newTodo').value.trim();if(!v)return;const ord=state.todos.filter(t=>t.date===date).reduce((m,t)=>Math.max(m,(t.order??-1)),-1)+1;state.todos.push({id:uid(),date,text:v,done:false,order:ord});save();openDay(...date.split('-').map(Number));renderCalendar();}
 function toggleTodo(id){const t=state.todos.find(x=>x.id===id);if(t){t.done=!t.done;save();const d=parseD(t.date);openDay(d.y,d.m,d.d);renderCalendar();}}
 function editTodo(id){const t=state.todos.find(x=>x.id===id);if(!t)return;inputDialog('编辑待办',t.text).then(v=>{if(v!==null){t.text=v;save();const d=parseD(t.date);openDay(d.y,d.m,d.d);renderCalendar();}});}
 function deleteTodo(id){return confirmDialog('确定删除该待办？').then(ok=>{if(!ok)return false;state.todos=state.todos.filter(x=>x.id!==id);save();renderCalendar();return true;});}
