@@ -130,8 +130,10 @@ nav.tabbar{
 .todo-row .del{flex:none;width:30px;height:30px;border-radius:9px;display:flex;align-items:center;justify-content:center;color:var(--red);background:rgba(229,72,77,.12);}
 .todo-row .del:active{background:rgba(229,72,77,.22);}
 .todo-row .del svg{width:15px;height:15px;stroke:var(--red);}
-.todo-row{cursor:grab;touch-action:none;}
+.todo-row{cursor:default;}
 .todo-row .chk,.todo-row .del{cursor:pointer;}
+.todo-row .drag-h{flex:none;width:22px;display:flex;align-items:center;justify-content:center;cursor:grab;color:var(--ink-2);opacity:.55;touch-action:none;font-size:16px;line-height:1;user-select:none;-webkit-user-select:none;}
+.todo-row .drag-h:active{cursor:grabbing;opacity:1;background:rgba(0,0,0,.06);border-radius:6px;}
 .todo-row.dragging{opacity:.92;box-shadow:0 6px 16px rgba(0,0,0,.2);transform:scale(1.02);background:var(--panel);cursor:grabbing;position:relative;z-index:5;}
 .todo-hint{font-size:11px;color:var(--ink-2);opacity:.7;margin:0 0 6px;}
 .addbar{display:flex;gap:8px;margin:8px 0 4px;}
@@ -686,8 +688,9 @@ function openDay(y,m,d){
   if(!sps.length)html+=`<div class="empty-hint">当天没有特殊日</div>`;
   sps.forEach(s=>{html+=`<div class="sp-item"><div class="ic">${svg(SP_TYPES[s.type].icon)}</div><div class="meta"><div class="ti">${esc(spTitle(s))}</div><div class="de">${esc(spDetail(s))}</div></div><button class="del" title="删除" aria-label="删除" onclick="deleteSp('${s.id}').then(ok=>{if(ok)openDay(${y},${m},${d});});">${svg('trash')}</button></div>`;});
   html+=`<div class="section-title"><span class="ln"></span>当日待办（${dayTodos.length}）</div>`;
-  html+=`<div class="todo-hint">按住待办上下拖动可调整当天顺序</div>`;
+  html+=`<div class="todo-hint">拖动每行左侧的「⋮⋮」手柄可调整当天顺序</div>`;
   dayTodos.forEach(t=>{html+=`<div class="todo-row ${t.done?'done':''}" data-id="${t.id}">
+    <span class="drag-h" aria-label="拖动排序">⋮⋮</span>
     <div class="chk" onclick="toggleTodo('${t.id}')">${t.done?'✓':''}</div>
     <div class="txt" ondblclick="editTodo('${t.id}')">${esc(t.text)}</div>
     <button class="del" title="删除" aria-label="删除" onclick="deleteTodo('${t.id}').then(ok=>{if(ok)openDay(${y},${m},${d});});">${svg('trash')}</button></div>`;});
@@ -697,42 +700,47 @@ function openDay(y,m,d){
     {icon:'edit',label:'编辑',fn:()=>editTodo(tid)},
     {icon:'delay',label:'延后日期',fn:()=>delayTodo(tid)},
     {icon:'trash',label:'删除',fn:()=>deleteTodo(tid).then(ok=>{if(ok)openDay(y,m,d);})}
-  ]);});});
+  ], '.drag-h');});});
   enableTodoDrag();
   $('#daySheet').classList.add('open');
 }
 function closeDay(){$('#daySheet').classList.remove('open');}
 function enableTodoDrag(){
   $$('#dayBody .todo-row').forEach(row=>{
-    let sy=0,sx=0,drag=false,pid=null;
-    row.addEventListener('pointerdown',e=>{
+    let sx=0,sy=0,dragging=false,started=false,pid=null,hmove=null,hup=null;
+    const onDown=e=>{
       if(e.target.closest('.chk')||e.target.closest('.del'))return;
-      sy=e.clientY;sx=e.clientX;drag=false;pid=e.pointerId;
-      try{row.setPointerCapture(pid);}catch(_){}
-    });
-    row.addEventListener('pointermove',e=>{
+      if(e.pointerType!=='mouse'&&!e.target.closest('.drag-h'))return; // 手机只在抓手柄时拖动，避免和滑动面板冲突
+      if(e.pointerType==='mouse'&&e.button!==0)return;
+      sx=e.clientX;sy=e.clientY;started=false;dragging=false;pid=e.pointerId;
+      hmove=onMove;hup=onUp;
+      window.addEventListener('pointermove',hmove);
+      window.addEventListener('pointerup',hup);
+      window.addEventListener('pointercancel',hup);
+    };
+    const onMove=e=>{
       if(pid===null)return;
       const dx=e.clientX-sx,dy=e.clientY-sy;
-      if(!drag){ if(Math.abs(dx)<8&&Math.abs(dy)<8)return; drag=true;dragActive=true;row.classList.add('dragging');lpSuppress=true; }
-      e.preventDefault();
+      if(!started){ if(Math.abs(dx)<8&&Math.abs(dy)<8)return; started=true;dragging=true;dragActive=true;row.classList.add('dragging');lpSuppress=true; }
       const others=[...$$('#dayBody .todo-row')].filter(r=>r!==row);
       let ref=null;
       for(const r of others){const b=r.getBoundingClientRect();if(e.clientY<b.top+b.height/2){ref=r;break;}}
       if(ref)row.parentNode.insertBefore(row,ref);else row.parentNode.appendChild(row);
-    });
-    const end=()=>{
+    };
+    const onUp=()=>{
       if(pid===null)return;
-      try{row.releasePointerCapture(pid);}catch(_){}
+      window.removeEventListener('pointermove',hmove);
+      window.removeEventListener('pointerup',hup);
+      window.removeEventListener('pointercancel',hup);
       pid=null;
-      if(drag){drag=false;dragActive=false;row.classList.remove('dragging');
+      if(dragging){dragging=false;dragActive=false;row.classList.remove('dragging');
         const all=[...$$('#dayBody .todo-row')];
         all.forEach((r,i)=>{const t=state.todos.find(x=>x.id===r.dataset.id);if(t)t.order=i;});
         save();renderCalendar();
         if(curOpenDay)openDay(curOpenDay[0],curOpenDay[1],curOpenDay[2]);
       }
     };
-    row.addEventListener('pointerup',end);
-    row.addEventListener('pointercancel',end);
+    row.addEventListener('pointerdown',onDown);
   });
 }
 function spTitle(s){const t=SP_TYPES[s.type];const f=t.fields.find(x=>x.k==='name'||x.k==='who');return s[f?f.k:'']||t.label;}
@@ -1188,12 +1196,12 @@ function closeSheet2(){$('#overlay2').classList.remove('open');}
 /* 长按（触摸 + 鼠标），触发后抑制随后一次 click，避免误触 */
 let lpSuppress=false;
 document.addEventListener('click',e=>{if(lpSuppress){e.stopPropagation();e.preventDefault();}},true);
-function longPress(el,cb){
+function longPress(el,cb,skipSel){
   let timer=null,startX=0,startY=0;
-  el.addEventListener('touchstart',e=>{startX=e.touches[0].clientX;startY=e.touches[0].clientY;timer=setTimeout(()=>{timer=null;lpSuppress=true;setTimeout(()=>lpSuppress=false,360);cb();},480);});
+  el.addEventListener('touchstart',e=>{if(skipSel&&e.target.closest(skipSel))return;startX=e.touches[0].clientX;startY=e.touches[0].clientY;timer=setTimeout(()=>{timer=null;lpSuppress=true;setTimeout(()=>lpSuppress=false,360);cb();},480);});
   el.addEventListener('touchmove',e=>{if(Math.abs(e.touches[0].clientX-startX)>8||Math.abs(e.touches[0].clientY-startY)>8)clearTimeout(timer);});
   el.addEventListener('touchend',()=>clearTimeout(timer));
-  el.addEventListener('mousedown',e=>{if(e.button!==0)return;timer=setTimeout(()=>{timer=null;lpSuppress=true;setTimeout(()=>lpSuppress=false,360);cb();},550);});
+  el.addEventListener('mousedown',e=>{if(skipSel&&e.target.closest(skipSel))return;if(e.button!==0)return;timer=setTimeout(()=>{timer=null;lpSuppress=true;setTimeout(()=>lpSuppress=false,360);cb();},550);});
   el.addEventListener('mouseup',()=>clearTimeout(timer));
   el.addEventListener('mouseleave',()=>clearTimeout(timer));
 }
