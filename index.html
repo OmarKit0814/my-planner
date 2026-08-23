@@ -704,6 +704,7 @@ function openDay(y,m,d){
     {icon:'delay',label:'延后日期',fn:()=>delayTodo(tid)},
     {icon:'trash',label:'删除',fn:()=>deleteTodo(tid).then(ok=>{if(ok)openDay(y,m,d);})}
   ], '.drag-h');});});
+  $('#newTodo').addEventListener('keydown',e=>{if(e.key==='Enter')addTodo(dateStr);});
   enableTodoDrag();
   $('#daySheet').classList.add('open');
   $('#dayMask').classList.add('open');
@@ -838,6 +839,7 @@ function openMemoEditor(folderId,it){
     </div>`;
   openSheet(html);
   $('#memoC').addEventListener('click',closeSheet);
+  $('#memoTitle').addEventListener('keydown',e=>{if(e.key==='Enter'){$('#memoS').click();}});
   $('#memoS').addEventListener('click',()=>{
     const t=$('#memoTitle').value.trim(),c=$('#memoContent').value;
     if(!t&&!c){toast('请填写标题或内容');return;}
@@ -1075,6 +1077,7 @@ function openSpForm(type,editObj){
       $('#leapWrap').style.display=cal==='lunar'?'block':'none';
     }));
     $('#spCancel').addEventListener('click',closeSheet);
+    $$('#sheet input').forEach(inp=>{if(inp.type!=='checkbox')inp.addEventListener('keydown',e=>{if(e.key==='Enter'){$('#spSave').click();}});});
     $('#spSave').addEventListener('click',()=>{
       const who=$('#sheet [data-k=who]').value.trim();
       if(!who){toast('请填写对象');return;}
@@ -1118,6 +1121,7 @@ function openSpForm(type,editObj){
   $('#spPick').addEventListener('click',()=>{const[y,m,d]=curDate.split('-').map(Number);openDatePicker(new Date(y,m-1,d),(yy,mm,dd)=>{curDate=fmt(yy,mm,dd);$('#spDatePreview').textContent=curDate;});});
   $$('#sheet [data-bool]').forEach(c=>c.addEventListener('click',()=>c.classList.toggle('on')));
   $('#spCancel').addEventListener('click',closeSheet);
+  $$('#sheet input').forEach(inp=>{if(inp.type!=='checkbox')inp.addEventListener('keydown',e=>{if(e.key==='Enter'){$('#spSave').click();}});});
   $('#spSave').addEventListener('click',()=>{
     const vals={};$$('#sheet [data-k]').forEach(i=>vals[i.dataset.k]=i.value);
     $$('#sheet [data-bool]').forEach(c=>{if(c.classList.contains('on'))vals[c.dataset.bool]=true;});
@@ -1250,6 +1254,8 @@ $('#spChips').addEventListener('click',e=>{const c=e.target.closest('.chip');if(
 $('#swTheme').addEventListener('click',()=>{const on=$('#swTheme').classList.toggle('on');state.settings.theme=on?'dark':'light';document.documentElement.setAttribute('data-theme',state.settings.theme);localStorage.setItem(STORE,JSON.stringify(state));});
 $('#swSync').addEventListener('click',()=>{const on=$('#swSync').classList.toggle('on');state.settings.gist.enabled=on;$('#syncCard').style.display=on?'block':'none';save();if(on){syncGist();toast('已开启云端同步');}else{toast('已关闭云端同步');}});
 $('#btnSyncSave').addEventListener('click',()=>{state.settings.gist.token=$('#gistToken').value.trim();state.settings.gist.id=$('#gistId').value.trim();state.settings.gist.enabled=true;$('#swSync').classList.add('on');$('#syncCard').style.display='block';save();syncGist();toast('已保存，开始同步');});
+$('#gistToken').addEventListener('keydown',e=>{if(e.key==='Enter')$('#btnSyncSave').click();});
+$('#gistId').addEventListener('keydown',e=>{if(e.key==='Enter')$('#btnSyncSave').click();});
 $('#btnSyncNow').addEventListener('click',()=>{state.settings.gist.token=$('#gistToken').value.trim();state.settings.gist.id=$('#gistId').value.trim();state.settings.gist.enabled=true;$('#swSync').classList.add('on');$('#syncCard').style.display='block';save();pullGist();});
 $('#btnCopyId').addEventListener('click',()=>{const v=$('#gistId').value.trim();if(!v){toast('编号为空，先在手机上生成/复制');return;}navigator.clipboard?navigator.clipboard.writeText(v).then(()=>toast('编号已复制，去另一台粘贴')).catch(()=>{const i=$('#gistId');i.select();document.execCommand('copy');toast('编号已复制，去另一台粘贴');}):(function(){const i=$('#gistId');i.select();document.execCommand('copy');toast('编号已复制，去另一台粘贴');})();});
 $('#btnExport').addEventListener('click',exportJSON);
