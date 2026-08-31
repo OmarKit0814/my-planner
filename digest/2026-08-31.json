@@ -1,0 +1,192 @@
+{
+ "date": "2026-08-31",
+ "no": 1,
+ "headline": "正式第 1 期 · 今天三件大事：① IMF 总裁格奥尔基耶娃把全球经济比作「风暴中颠簸的船」——能源冲击未完、通胀今年料达 4.7%，但 AI 投资热潮成了关键顺风；② 香港被外资大行集体看多：瑞银、汇丰先后把 2026 年 GDP 预测上调至 4.5%，渣打中小企指数也止跌回升至 44.1；③ 德勤新报告预言：2035 年亚太金融服务规模将达 4.8 万亿美元、超越美国，香港正站在这场变革的中心。",
+ "reports": [
+  {
+   "org": "IMF",
+   "orgZh": "国际货币基金组织",
+   "title": "Georgieva: Global economy a 'ship tossed in a storm' — AI tailwinds vs energy shock",
+   "tag": "全球宏观",
+   "date": "2026-08-25",
+   "points": [
+    {
+     "en": "The global economy as a whole has, so far, weathered the shock from the war better than feared.",
+     "zh": "整体来看，全球经济迄今扛住了战争带来的冲击，表现好于之前的担忧。"
+    },
+    {
+     "en": "Global headline inflation is expected to increase from 4.1 percent in 2025 to 4.7 percent in 2026 before declining to 3.9 percent in 2027.",
+     "zh": "全球整体通胀预计从 2025 年的 4.1% 升至 2026 年的 4.7%，2027 年才回落至 3.9%。"
+    },
+    {
+     "en": "A renewed conflict in the region is going to catch the global economy in a worse position than it was the first time.",
+     "zh": "（IMF 研究部主管 Igan 警告）若中东冲突重启，全球经济所处的处境将比上一次更糟糕——各国储备已基本用尽，回旋余地更小。"
+    },
+    {
+     "en": "Energy exporters outside the conflict zone benefit from favorable terms of trade, whereas economies plugged into the technology-led upturn experience stronger activity even if they are energy importers.",
+     "zh": "冲突区之外的能源出口国受益于有利的贸易条件；而接入技术驱动上行的经济体（即使依赖能源进口）活动也更强劲。"
+    }
+   ],
+   "note": "格奥尔基耶娃 8 月 25 日在华盛顿的讲话：全球经济像「风暴中颠簸的船」，一边被高通膨、债务与能源冲击打压，一边被 AI 革命的顺风推动；风险「仍偏下行」、不确定性高，冬季能源需求可能再推高油价。背景是 7 月《世界经济展望》更新：2026 年全球增长 3.0%、2027 年反弹至 3.4%。对求职者的意义：全球「战争 vs 科技」双主线是当下一切宏观问题的总框架，面试聊宏观先从这两股力量切入就不会跑偏。"
+  },
+  {
+   "org": "UBS · HSBC · Standard Chartered",
+   "orgZh": "瑞银 · 汇丰 · 渣打",
+   "title": "Foreign banks raise 2026 Hong Kong GDP forecasts to 4.3–4.5% on AI trade boom",
+   "tag": "香港与大中华",
+   "date": "2026-08-07",
+   "points": [
+    {
+     "en": "UBS raised its 2026 Hong Kong GDP growth forecast from 3.3% to 4.5%, above the market consensus of 3.5%; second-quarter nominal goods exports grew 46% year-on-year, the fastest pace since 1976.",
+     "zh": "瑞银把 2026 年香港 GDP 增长预测从 3.3% 大幅上调至 4.5%，高于市场一致预期的 3.5%；二季度名义商品出口同比增长 46%，为 1976 年以来所有季度最快增速。（据 8 月 3 日报告，中文媒体报道原文回译）"
+    },
+    {
+     "en": "HSBC upgraded its 2026 Hong Kong GDP growth forecast to 4.5% (from 3.8%); first-half exports grew 26% year-on-year, semiconductor-related trade exceeds 40% of total goods trade and has recently grown by more than 50%.",
+     "zh": "汇丰把 2026 年香港增长预测从 3.8% 上调至 4.5%；上半年出口同比增长 26%，半导体相关贸易占商品贸易总额超过 40%、近月同比增速逾 50%。（据 8 月 7 日报告，中文媒体报道原文回译）"
+    },
+    {
+     "en": "With over 70% of electronic products imported through the city, the AI super cycle is expected to significantly impact Hong Kong's economy, creating new opportunities and driving innovation.",
+     "zh": "由于超过七成电子产品经香港进口，AI「超级周期」预计将显著影响香港经济，创造新机遇并推动创新。（渣打下半年展望，预测 2026 年增长 4.3%）"
+    }
+   ],
+   "note": "背景：财政司司长陈茂波 8 月 2 日网志透露上半年经济增长 5.1%、强于预期；香港首份「五年规划」预计 9 月底公布，聚焦北部都会区与创科。风险提示：瑞银提醒若美国利率长期高企，香港利率敏感领域将承压。对求职者的意义：银行 PM 面试聊「为什么现在加入香港金融业」，AI 贸易超级周期 + 4.5% 增长就是最有力的时代背景板。"
+  },
+  {
+   "org": "Standard Chartered · HKPC",
+   "orgZh": "渣打银行 · 香港生产力促进局",
+   "title": "Q3 Hong Kong SME Leading Business Index rises to 44.1, ending the losing streak",
+   "tag": "香港与大中华",
+   "date": "2026-08-25",
+   "points": [
+    {
+     "en": "The Q3 SME Leading Business Index edged up to 44.1, with the global economy sub-index jumping 12.2 points from 20.9 to 33.1 — the biggest driver of the rebound.",
+     "zh": "三季度中小企营商指数微升至 44.1，结束连续数季跌势；「全球经济」子项从 20.9 反弹 12.2 点至 33.1，是最大拉动力。（826 家企业受访，中文报告要点回译）"
+    },
+    {
+     "en": "The import-export and wholesale sector index climbed to 42.4, a two-year high, while retail slipped to 41.6 and manufacturing stalled at 41.2.",
+     "zh": "进出口批发业指数升至 42.4、创两年新高；零售微跌至 41.6（利润率子项大跌 5.9 点）；制造业 41.2 连续三季原地踏步——三大行业景气明显分化。"
+    },
+    {
+     "en": "25% of Hong Kong SMEs have already started cross-border business, and 32% of them plan to expand further in the coming year.",
+     "zh": "25% 的香港中小企已开展跨境业务（另有 11% 计划一年内入场）；已出海企业中 32% 计划未来一年继续扩张——出海正从「少数人的冒险」变成「多数人的战略」。"
+    },
+    {
+     "en": "Only 19% of SMEs plan to raise prices while 64% expect input costs to keep climbing — margins are being squeezed from both ends.",
+     "zh": "只有 19% 的中小企计划提价（环比再降 4 个百分点），而 64% 预期原材料成本继续上升——成本涨、不敢涨价，利润被两头挤压。"
+    }
+   ],
+   "note": "报告 8 月 25 日发布，覆盖 826 家企业。要点：指数仍低于 50 乐观线，「一强四平」——外部预期修复了，但业务状况（40.5）和利润率（37.8）还在 40 下方。能力缺口排第一的不是钱，是「市场和客户开发能力」。对求职者的意义：这是银行中小企业（SME）业务线最直接的需求地图——跨境贸易融资、支付、数字化工具正是 25% 已出海 + 32% 想扩张的企业最需要的产品。"
+  },
+  {
+   "org": "Deloitte",
+   "orgZh": "德勤",
+   "title": "From growth to advantage: Competing for the future of financial services in Asia Pacific",
+   "tag": "行业与咨询",
+   "date": "2026-08-26",
+   "points": [
+    {
+     "en": "Asia Pacific's financial services industry is on track to generate as much as US$4.8 trillion in economic value added by 2035, overtaking the United States and cementing the region as the new centre of gravity for global finance.",
+     "zh": "亚太金融服务行业有望在 2035 年前创造高达 4.8 万亿美元的经济增加值，超越美国，坐实「全球金融新重心」的地位。"
+    },
+    {
+     "en": "The region's broader economy is expected to expand to nearly US$54 trillion by 2030, representing growth of 37% from 2024, ahead of Europe (36%) and North America (29%).",
+     "zh": "亚太整体经济预计到 2030 年扩张至近 54 万亿美元，较 2024 年增长 37%，超过欧洲（36%）与北美（29%）。"
+    },
+    {
+     "en": "Bank credit across 13 major Asia Pacific economies averages 122% of GDP, compared with 73% in North America; by contrast, market-based financing is only around 53% of GDP, less than half the depth of North America.",
+     "zh": "亚太 13 个主要经济体的银行信贷平均占 GDP 的 122%（北美仅 73%）；而市场化融资只占 GDP 约 53%、深度不到北美一半——融资结构高度依赖银行，正是资本市场的发展空间。"
+    },
+    {
+     "en": "Firms are using AI for productivity, not transformation. The next advantage will come from redesigning the business around AI, not adding AI to what already exists.",
+     "zh": "企业用 AI 提效率的多、做转型的少。下一个竞争优势来自「围绕 AI 重新设计业务」，而不是「在现有业务上叠加 AI」。"
+    }
+   ],
+   "note": "德勤 8 月 26 日在香港发布，提出未来十年四大「战场」：重塑金融体系、赢得客户、驾驭 AI 拐点、（融资结构转型）。亚太个人财富 2025 年达 169.7 万亿美元、占全球 32.8%。对求职者的意义：这份报告就是咨询面试的现成素材——「为什么选择亚太/香港」的答案全在里面；而「productivity, not transformation」一句更是数字转型项目最好的切入点表述。"
+  }
+ ],
+ "terms": [
+  {
+   "term": "weather the shock",
+   "zh": "扛住冲击 · 动词短语",
+   "defEn": "To survive or get through a difficult economic event without serious damage. \"Weather\" here means to endure a storm.",
+   "defZh": "经受住一场冲击而不受重创。weather 本义是「渡过风暴」，财经报道里超高频，比 survive 更有画面感。",
+   "exEn": "The global economy as a whole has, so far, weathered the shock from the war better than feared. — IMF",
+   "exZh": "整体来看，全球经济迄今扛住了战争冲击，表现好于之前的担忧。"
+  },
+  {
+   "term": "terms of trade",
+   "zh": "贸易条件 · 名词",
+   "defEn": "The ratio between the prices a country receives for its exports and pays for its imports. Improving terms of trade means selling dear and buying cheap.",
+   "defZh": "一国出口价格与进口价格之比。贸易条件改善 = 卖得贵、买得便宜（比如能源出口国在油价上涨时）。IMF 报告常客。",
+   "exEn": "Energy exporters outside the conflict zone benefit from favorable terms of trade. — IMF",
+   "exZh": "冲突区之外的能源出口国受益于有利的贸易条件。"
+  },
+  {
+   "term": "super cycle",
+   "zh": "超级周期 · 名词",
+   "defEn": "An unusually long and strong boom in demand or prices across an industry or the whole economy.",
+   "defZh": "一个行业或整个经济体异常持久、强劲的需求繁荣。渣打用「AI super cycle」形容本轮 AI 带动的贸易景气，已成香港市场标配词。",
+   "exEn": "With over 70% of electronic products imported through the city, the AI super cycle is expected to significantly impact Hong Kong's economy. — Standard Chartered",
+   "exZh": "由于超过七成电子产品经香港进口，AI 超级周期预计将显著影响香港经济。"
+  },
+  {
+   "term": "macroeconomic regime",
+   "zh": "宏观经济体制/范式 · 名词",
+   "defEn": "A lasting configuration of the economic environment — the balance of growth, inflation and interest rates that shapes how assets behave.",
+   "defZh": "增长、通胀、利率之间长期的组合关系，决定资产价格行为的「大环境」。BlackRock 等资管机构最爱用的框架词，与一时的「周期波动」相对。",
+   "exEn": "The regime that matters is one of moderating inflation, a more flexible Fed, real yields near historic levels, and a fixed income universe that has never offered more tools to build with. — BlackRock",
+   "exZh": "真正重要的体制是：通胀温和回落、美联储更灵活、实际收益率接近历史高位、固收工具前所未有地丰富。"
+  },
+  {
+   "term": "capital expenditure (capex)",
+   "zh": "资本开支 · 名词",
+   "defEn": "Money a company spends on long-term assets such as factories, equipment and infrastructure. AI capex means spending on data centers and chips.",
+   "defZh": "企业购置长期资产（厂房、设备、基础设施）的支出；AI capex 主要指数据中心与芯片投入。缩写 capex 是投行报告默认用词。",
+   "exEn": "The first is the artificial intelligence buildout, representing the fastest capital expenditure cycle in history. — BlackRock",
+   "exZh": "第一股力量是 AI 建设潮——史上最快的资本开支周期。"
+  },
+  {
+   "term": "economic value added",
+   "zh": "经济增加值 · 名词",
+   "defEn": "The value a company or industry creates after deducting the cost of capital; a measure of true economic profit.",
+   "defZh": "扣除资本成本后企业/行业真正创造的价值，衡量「真实利润」。也常指行业对 GDP 的贡献（德勤报告此用法）。",
+   "exEn": "Asia Pacific's financial services industry is on track to generate as much as US$4.8 trillion in economic value added by 2035. — Deloitte",
+   "exZh": "亚太金融服务行业有望在 2035 年前创造高达 4.8 万亿美元的经济增加值。"
+  },
+  {
+   "term": "centre of gravity",
+   "zh": "重心 · 名词短语",
+   "defEn": "The place where the most important activity or influence is concentrated.",
+   "defZh": "最重要活动或影响力聚集之地。「全球金融重心东移」的地道说法就是 the centre of gravity shifts east——比 center 更书面。",
+   "exEn": "...overtaking the United States and cementing the region as the new centre of gravity for global finance. — Deloitte",
+   "exZh": "……超越美国，坐实该地区作为全球金融新重心的地位。"
+  },
+  {
+   "term": "performance paradox",
+   "zh": "业绩悖论 · 名词",
+   "defEn": "The puzzle that firms widely adopt AI yet few capture real financial performance from it — because they accelerate old workflows instead of redesigning them.",
+   "defZh": "麦肯锡提出的概念：企业普遍用 AI、却少有人赚到钱——因为只是加速旧流程，而不是重新设计业务。咨询面试谈 AI 转型的黄金引用。",
+   "exEn": "Most current applications of AI 'accelerate existing work' without redesigning the underlying workflows. — McKinsey, AI productivity gains and the performance paradox",
+   "exZh": "当下大多数 AI 应用只是在「加速现有工作」，而没有重新设计底层流程。"
+  }
+ ],
+ "interview": [
+  {
+   "q": "银行产品经理面：「香港银行的中小企业业务现在值得投入吗？」",
+   "en": "I'd say yes, but selectively. Standard Chartered's latest SME index is still below 50 at 44.1, yet the global-economy sub-index jumped 12 points and import-export firms hit a two-year high. Meanwhile, 25 percent of SMEs already run cross-border business and nearly a third of them plan to expand further. So for a product manager, the real opportunity is targeted: trade finance, cross-border payments and digital tools for outward-looking SMEs — not broad-based credit expansion.",
+   "zh": "亮点在结构：先承认大盘弱（44.1 < 50），再指出边际改善（全球经济子项 +12 点）和结构性机会（25% 已出海 + 32% 想扩张），最后落到产品结论——贸易融资、跨境支付、数字化工具。「承认弱点 → 找增量 → 给产品方案」是 PM 面试的标准好答案。"
+  },
+  {
+   "q": "咨询（数字转型）面：「客户问 AI 转型该怎么做，你的框架是什么？」",
+   "en": "I'd start with the performance paradox — most firms use AI to accelerate existing work instead of redesigning the business around it. Deloitte's new Asia Pacific report makes the same point: the next advantage comes from redesigning the business around AI, not adding AI to what already exists. So my approach would be to map the client's value chain, pick two or three processes where AI can genuinely change the business model, and tie every initiative to measurable outcomes, because the region's financial services industry alone is heading toward US$4.8 trillion in economic value added by 2035 — the firms that transform will take the lion's share.",
+   "zh": "框架感满分的三段式：① 诊断（performance paradox）② 方法（map value chain → 选 2-3 个流程 → 绑定可量化结果）③ 愿景（4.8 万亿美元的大盘子）。用上 map the value chain（梳理价值链）、the lion's share（最大份额）两个咨询黑话，面试官会认为你「已经像顾问了」。"
+  },
+  {
+   "q": "宏观市场题：「你怎么看现在的全球经济和利率环境？」",
+   "en": "Two forces are pulling against each other. The IMF says the global economy has weathered the war shock better than feared, but risks remain tilted downward and headline inflation is still heading toward 4.7 percent this year. Meanwhile, the AI capex boom is the fastest capital expenditure cycle in history, feeding what BlackRock calls a new macroeconomic regime — a world of scarcity where more than 80 percent of the global bond universe yields above 4 percent. So my base case is higher-for-longer rates, and income — not price appreciation — becomes the main engine of returns.",
+   "zh": "两股力量对冲的结构：战争通胀（往下拽）vs AI 资本开支（往上推），落到「利率高位更久 + 收益为王」的结论。用上 weather the shock、capex、macroeconomic regime、higher-for-longer 四个今天的词，任何金融机构终面的宏观题都能这么答。"
+  }
+ ],
+ "tip": "晨读第 1 天的建议：别贪多。今天 8 个词里先掌握 4 个面试可直接说出口的——super cycle、capex、terms of trade、centre of gravity；对着镜子用 super cycle 造一句「为什么选香港」的英文，明天面试或 networking 随时能用。",
+ "start": "2026-08-31"
+}
