@@ -1,0 +1,195 @@
+{
+ "date": "2026-09-01",
+ "no": 2,
+ "headline": "晨读第 2 期 · 今天三件大事：① IMF 把 2026 年全球增长小幅下调到 3.0%、通胀抬升至 4.7%，但同时承认全球经济「比预期更有韧性」，AI 顺风继续抵消战事冲击；② 香港特区政府把全年 GDP 预测由弱向区间（3.5–4.5%）大幅上调，因 Q2 实质增长 4.3%、上半年 5.1% 创近五年最强、AI 相关电子产品出口按年实质急升 28.9%；③ 麦肯锡《全球银行年报 2026》：生成式 AI 每年可为全球银行业贡献 2,000–3,400 亿美元价值、Agentic AI 把客户从「惯性银行」拉进「智能代理时代」，传统银行「不再有缓慢转型的奢侈」。",
+ "reports": [
+  {
+   "org": "IMF",
+   "orgZh": "国际货币基金组织",
+   "title": "WEO Update: Global economy proves more resilient than expected; 2026 growth trimmed to 3.0%, inflation lifted to 4.7%",
+   "tag": "全球宏观",
+   "date": "2026-07-08",
+   "points": [
+    {
+     "en": "The global economy has so far proved more resilient than expected to the shocks caused by the conflict.",
+     "zh": "全球经济迄今对冲突造成的冲击表现出比预期更强的韧性。"
+    },
+    {
+     "en": "We are projecting global growth of 3.0 percent in 2026, 0.1 percentage point lower than in our April projection, and 3.4 percent in 2027.",
+     "zh": "我们预计 2026 年全球经济增长 3.0%，比 4 月预测低 0.1 个百分点；2027 年回升至 3.4%。"
+    },
+    {
+     "en": "Global headline inflation is expected to increase from 4.1 percent in 2025 to 4.7 percent in 2026 before declining to 3.9 percent in 2027.",
+     "zh": "全球整体通胀预计从 2025 年的 4.1% 升至 2026 年的 4.7%，2027 年回落至 3.9%。"
+    },
+    {
+     "en": "Any renewed conflict in the region would leave the global economy in a worse position than it was before.",
+     "zh": "如果该地区冲突再次爆发，全球经济所处的处境将比之前更糟——各国财政与外汇缓冲已被消耗殆尽。"
+    }
+   ],
+   "note": "IMF 7 月 8 日发布的最新《世界经济展望》更新把全球增长小幅下调到 3.0%、通胀抬升到 4.7%，但同时承认「韧性超预期」。三大下行风险：中东冲突再现、通胀粘性、贸易碎片化；AI 应用扩散与贸易协议降级是唯一上行可能。香港特区政府 8/14 半年报与德勤 8/26 报告都引用了这份 WEO 数据。对求职者的意义：面试聊宏观必学的三句话——so far more resilient than expected（韧性）、headline inflation（标题通胀）、in a worse position than before（上次能扛，这次未必）。"
+  },
+  {
+   "org": "Hong Kong Census and Statistics Department · HK Government",
+   "orgZh": "香港特区政府统计处 · 香港特区政府",
+   "title": "Half-yearly Economic Report 2026: Q2 GDP +4.3%, H1 +5.1%, full-year forecast upgraded to 3.5–4.5%",
+   "tag": "香港与大中华",
+   "date": "2026-08-14",
+   "points": [
+    {
+     "en": "Hong Kong's real GDP grew by 4.3% year-on-year in Q2 2026, after a 5.9% increase in the preceding quarter; the H1 figure of 5.1% is the strongest half-yearly performance in nearly five years.",
+     "zh": "2026 年第二季香港实质 GDP 按年增长 4.3%（前一季度 +5.9%），上半年累计 +5.1%，是近五年最强的半年度表现。"
+    },
+    {
+     "en": "Total goods exports surged by 28.9% in real terms year-on-year in Q2, driven by strong global demand for AI-related electronic products; June goods exports were up 53.4% by value.",
+     "zh": "受全球对 AI 相关电子产品需求强劲推动，第二季整体货物出口按年实质急升 28.9%；6 月份商品出口货值按年增长 53.4%。"
+    },
+    {
+     "en": "Considering the better-than-expected outturn in the first half and the near-term outlook, the Government's real GDP growth forecast for 2026 as a whole is revised up to 3.5–4.5%.",
+     "zh": "考虑到上半年优于预期的实际数字与短期展望，政府把 2026 年全年实质 GDP 增长预测向上修订至 3.5–4.5%。"
+    },
+    {
+     "en": "Private consumption expenditure rose by a solid 2.8% in real terms year-on-year in Q2, extending the increase for five consecutive quarters; the seasonally adjusted unemployment rate stayed at 3.7%.",
+     "zh": "第二季私人消费开支按年实质上升 2.8%，是连续第五季扩张；经季节性调整的失业率维持 3.7%。"
+    }
+   ],
+   "note": "香港特区政府《2026 年半年经济报告》8 月 14 日发布；政府经济顾问范婉儿指出「全球对 AI 相关电子产品需求殷切，带动贸易往来畅旺」、「踏入下半年经济仍受 AI 热潮带动」。风险点：中东地缘、美国货币政策不确定性、主要先进经济体贸易保护主义。对求职者的意义：3.5–4.5% 是香港政府自己的全年预测区间，对银行 PM 面试回答「为什么现在加入香港」最有说服力——这是当政府而非投行说的数字。"
+  },
+  {
+   "org": "Morgan Stanley",
+   "orgZh": "摩根士丹利",
+   "title": "China Equities Strategy: From Hong Kong rebound window to A-shares rotation; watch September inflection",
+   "tag": "香港与大中华",
+   "date": "2026-08-15",
+   "points": [
+    {
+     "en": "We were repeatedly emphasising our belief that Hong Kong stocks would have a strong rebound window starting in July, and market developments have largely matched our expectations — the Hang Seng and MSCI China have rebounded over 13% and nearly 10% respectively since July.",
+     "zh": "我们曾多次强调港股 7 月起会进入强反弹窗口，市场走势基本印证——恒指与 MSCI 中国自 7 月以来分别反弹超过 13% 和近 10%。"
+    },
+    {
+     "en": "At current levels, we recommend gradually rotating positions back into A-shares and not increasing risk exposure to Hong Kong further.",
+     "zh": "目前价位上，我们建议把仓位从港股逐步轮回到 A 股，不应继续加仓港股。"
+    },
+    {
+     "en": "After the significant correction in US equities — especially AI-related sectors — indices tied to extreme risk appetite have gradually stabilized; we expect gradual fund flows into Japan and Korea, and Hong Kong, as a source of funds, may face increasing relative selling pressure.",
+     "zh": "美股——尤其是 AI 相关板块——经历大幅调整后，依赖极端风险偏好的指数已渐趋稳定；我们预计资金会逐步流向日本与韩国，而作为「资金源头」的港股可能面临越来越大的相对卖出压力。"
+    },
+    {
+     "en": "Entering September, especially mid-to-late September, we should closely watch whether geopolitical risks and US-China relations could ease.",
+     "zh": "进入 9 月，特别是 9 月中下旬，应密切关注地缘政治风险与中美关系是否有缓解迹象。"
+    }
+   ],
+   "note": "摩根士丹利 8 月 15 日前后《中国股票策略》由「加仓港股」调整为「轮到 A 股」——核心是港股 7–9 月反弹窗口已基本兑现，外资仍极低配、外加 short-covering 已经完成大部分。日元 ROE 故事 + 韩国上调到 overweight 的资金虹吸，是港股下一阶段相对承压的主因。9 月中下旬两个观察点：① 中美高层互动是否兑现（市场预期 9/24 有访美行程）② AI 商业化提速的信号。对求职者的意义：short covering（空头回补）、rotation（仓位轮换）两个词就是面试聊外资流向时「像外资行的 PM」必备词汇。"
+  },
+  {
+   "org": "McKinsey & Company",
+   "orgZh": "麦肯锡",
+   "title": "Global Banking Annual Review 2026: Generative AI adds $200–340B annually; Agentic AI ends the era of gradual transformation",
+   "tag": "行业与咨询",
+   "date": "2026-07-01",
+   "points": [
+    {
+     "en": "Gen AI could add between $200 billion and $340 billion annually to the global banking sector, equivalent to 2.8 to 4.7 percent of total industry revenues — largely through productivity gains.",
+     "zh": "生成式 AI 可每年为全球银行业贡献 2,000–3,400 亿美元价值，相当于行业总收入的 2.8–4.7%——主要来自生产力提升。"
+    },
+    {
+     "en": "Banks are losing the luxury of gradual transformation. Nearly half of the US working-age population adopted generative AI within just two years, compared with roughly 15 years for digital banking to reach similar penetration.",
+     "zh": "银行不再享有「慢慢转型」的奢侈——美国劳动人口在两年内就接纳了生成式 AI，相比之下数字银行做到同等渗透率花了 15 年。"
+    },
+    {
+     "en": "From a bank adoption standpoint, we reached a point where people believe there will be 20 to 30 agents per bank employee.",
+     "zh": "从银行部署的角度看，我们已到一个点——业内相信每位银行员工将对应 20 至 30 个 AI 代理。"
+    },
+    {
+     "en": "Agentic AI removes the friction that once kept customers loyal to a single bank — agents can monitor balances, find better rates, move funds and refinance debt on the user's behalf in real time.",
+     "zh": "代理式 AI 移除了让客户长期留在同一家银行的摩擦——代理可以实时监控账户余额、寻找更优利率、自动转存与再融资。"
+    }
+   ],
+   "note": "麦肯锡《Global Banking Annual Review 2026》7 月发布，是今年数字转型咨询与银行 PM 面试的「圣经报告」。核心判断：2025 年全球银行净收入 1.3 万亿美元（同比 +7%）；JPMorgan LLM Suite 已覆盖 25 万员工，效率提升 30–40%。对求职者的意义：consulting 一句「moving from copilots to agents」、PM 一句「banks are losing the luxury of gradual transformation」分别对咨询面与 PM 面就是 30 秒内的「专业感炸场」句式。"
+  }
+ ],
+ "terms": [
+  {
+   "term": "headline inflation",
+   "zh": "标题通胀 · 名词",
+   "defEn": "The overall, unadjusted rate of inflation including volatile food and energy prices — what you see in headline news.",
+   "defZh": "包含波动剧烈的食品与能源价格的总体通胀率。Headline = 报纸头条，标题通胀与「核心通胀」(core inflation) 相对，央行决策主要看核心，看基本面先看标题。",
+   "exEn": "Global headline inflation is expected to increase from 4.1 percent in 2025 to 4.7 percent in 2026 before declining to 3.9 percent in 2027. — IMF WEO Update, Jul 8, 2026",
+   "exZh": "全球整体通胀预计从 2025 年的 4.1% 升至 2026 年的 4.7%，2027 年回落至 3.9%。"
+  },
+  {
+   "term": "terms of trade",
+   "zh": "贸易条件 · 名词",
+   "defEn": "The ratio of a country's export prices to its import prices; improving terms of trade means selling dearer and buying cheaper.",
+   "defZh": "一国出口价格与进口价格之比。贸易条件改善 = 卖得贵、买得便宜。国际收支分析核心理念，能源/大宗出口国常用此词。",
+   "exEn": "The outlook is more favourable for energy-exporting countries and economies integrated with the technology sector. — IMF WEO Update, Jul 8, 2026",
+   "exZh": "前景对能源出口国以及与科技行业深度融合的经济体更为有利。"
+  },
+  {
+   "term": "resilient",
+   "zh": "有韧性的 · 形容词",
+   "defEn": "Able to withstand or recover quickly from shocks. \"More resilient than expected\" is the most common central-bank framing of a recovering economy.",
+   "defZh": "扛住冲击或在冲击后快速恢复。「比预期更有韧性」是央行描述复苏经济时最高频的措辞——面试谈 2025–2026 经济主线的标准开场。",
+   "exEn": "The global economy has so far proved more resilient than expected to the shocks caused by the conflict. — IMF WEO Update, Jul 8, 2026",
+   "exZh": "全球经济迄今对冲突造成的冲击表现出比预期更强的韧性。"
+  },
+  {
+   "term": "short covering (rally)",
+   "zh": "空头回补（行情）· 名词短语",
+   "defEn": "Bonds or stocks rise when traders who had sold short are forced to buy back to close their positions, pushing prices further up.",
+   "defZh": "被做空的资产上涨时，做空者被迫「买回平仓」反向买入，进一步推高价格；这一波走势叫 short-covering rally。摩根士丹利正是用它解释港股 7–8 月反弹。",
+   "exEn": "Global market volatility has triggered unwinding of short positions against the Hong Kong dollar, providing upward momentum. — Morgan Stanley China Equities Strategy, mid-Aug 2026",
+   "exZh": "全球市场波动触发针对港元的空头头寸被平仓，为市场提供了向上的动能。"
+  },
+  {
+   "term": "rotation",
+   "zh": "仓位轮换 · 名词",
+   "defEn": "When investors shift portfolio weight from one asset class, sector or geography to another — usually chasing stronger recent returns.",
+   "defZh": "投资人把组合权重从一个标的或地区转移到另一个。「rotation out of HK into A-shares」就是港股 PM 面试的现成回答骨架。",
+   "exEn": "We recommend gradually rotating positions back into A-shares and not increasing risk exposure to Hong Kong further. — Morgan Stanley, mid-Aug 2026",
+   "exZh": "我们建议把仓位从港股逐步轮回到 A 股，不应继续加仓港股。"
+  },
+  {
+   "term": "capex",
+   "zh": "资本开支 · 名词",
+   "defEn": "Capital expenditure — money a firm spends on long-term assets like data centers, chips and equipment.",
+   "defZh": "资本支出（capital expenditure 的缩写）。AI capex 是「数据中心 + 芯片 + 配套电力」的巨型投入，投行报告默认用词；用 capex 不用 investment 让答案更 banker。",
+   "exEn": "JPMorgan's LLM Suite reaches roughly 250,000 employees, delivering reported efficiency gains of 30–40 percent across covered tasks. — McKinsey Global Banking Annual Review 2026",
+   "exZh": "摩根大通的 LLM Suite 已覆盖约 25 万名员工，所覆盖任务的效率据报提升 30%–40%。"
+  },
+  {
+   "term": "agentic AI",
+   "zh": "代理式人工智能 · 名词短语",
+   "defEn": "AI systems that can plan and execute multi-step tasks on a user's behalf, rather than only answering questions.",
+   "defZh": "能代表用户规划并执行多步任务的 AI 系统，不再只是「问答」，而是「代办」。麦肯锡《银行年报 2026》定义为银行业下一阶段的决定性架构转变。",
+   "exEn": "Customers are increasingly getting comfortable with agents acting on their behalf … from a bank adoption standpoint, we reached a point where people believe there will be 20 to 30 agents per bank employee. — McKinsey",
+   "exZh": "客户越来越习惯让代理代替自己操作……从银行部署的角度看，我们已到了一个点——业内相信每位银行员工将对应 20 至 30 个 AI 代理。"
+  },
+  {
+   "term": "gradual transformation",
+   "zh": "渐进式转型 · 名词短语",
+   "defEn": "An organisation's slow, step-by-step adoption of new technology while keeping the old business largely intact.",
+   "defZh": "组织保留旧业务、以小步快走方式逐步引入新技术的转型策略。麦肯锡直接说银行「不再有渐进式转型的奢侈」。",
+   "exEn": "Banks are losing the luxury of gradual transformation — AI is different because adoption is happening across all age groups, not just the youngest. — McKinsey Global Banking Annual Review 2026",
+   "exZh": "银行不再享有「慢慢转型」的奢侈——AI 的特别之处在于它的采用跨越所有年龄段，而不只是年轻人。"
+  }
+ ],
+ "interview": [
+  {
+   "q": "银行产品经理面：「Agentic AI 对香港中小企业（SME）银行业务是威胁还是机会？」",
+   "en": "I'd frame it as an inflection point, not a threat. McKinsey's 2026 Global Banking Annual Review says we are heading toward 20 to 30 AI agents per bank employee, and agentic AI will remove the friction that used to keep SME customers locked to a single bank. For our SME business in Hong Kong — where the latest Standard Chartered / HKPC index shows 25 percent of SMEs already do cross-border business and another 32 percent want to expand — the real product opportunity is to be the bank that powers those agents: cross-border payments, trade finance flows and treasury APIs that fit into an SME's own AI agent or ERP. So my product roadmap would lean into openness, not lock-in.",
+   "zh": "亮点在取舍：不简单答题（威胁 vs 机会），改答「拐点 + 产品机会」，并直接引用麦肯锡的 20-30 agents、agentic AI removed friction 短语，把「为什么这条产品在 Agent 时代活了」讲透。HR 听到 25% + 32% 这两个具体数字就知道你关注了上期简报，加分。"
+  },
+  {
+   "q": "咨询（数字转型）面：「麦肯锡说银行 AI 2,000-3,400 亿美元的价值，客户为什么拿不到？」",
+   "en": "For two reasons. First, value capture requires redesigning the workflow, not just deploying a chat window — McKinsey explicitly warns that banks are losing the luxury of gradual transformation, because adoption is no longer confined to younger customers. Second, the 20-to-30-agents-per-employee reality means our clients will need an AI architecture: model routing, retrieval, observability and a governance layer, not a single fine-tuned LLM. So my consulting approach is three-tiered — diagnose the highest-value processes, redesign the workflow around the agent, and stand up the AI architecture with measurable risk controls. The prize is real: 2.8 to 4.7 percent of industry revenue — but only for the firms that move from productivity to transformation.",
+   "zh": "框架感满分：① 原因是「加速现有流程 ≠ 重新设计」（紧扣麦肯锡 performance paradox 那条主线）② 解决方案 = 三件套（诊断流程 → 围绕 agent 重新设计 → 搭建 AI 架构 + 风险治理）③ 收尾用「from productivity to transformation」（麦肯锡原词）回扣大局。咨询面试答完这三段，面试官会认为你能直接跟 MD 谈。"
+  },
+  {
+   "q": "宏观市场题：「美联储 9 月会不会加息？港股资金面怎么看？」",
+   "en": "Two competing signals. On policy, the IMF just upgraded its US 2026 growth forecast partly on AI capex, while August inflation has come in cooler, so a September hike is unlikely unless core CPI surprises sharply upward. Capital markets tell the same story — the US 10-year yield hit its highest since early 2025, but Goldman Sachs insists Fed Chair Warsh's hawkish Jackson Hole tone will not be backed by hawkish data, so their base case still has the FOMC on hold. On Hong Kong flows, Morgan Stanley now recommends rotating from HK back into A-shares, noting that the July-September rebound — driven by short covering — is largely behind us, and capital may flow back to Japan and Korea. The net read for me: rates higher-for-longer, and HK equities are mid-cycle, not early-cycle, despite the strong 4.3 percent Q2 GDP print.",
+   "zh": "两信号对冲的标准宏观答案：① 美联储短期按兵不动概率高，金句 on hold despite hawkish tone；② 港股进入 mid-cycle（中期），提示引用 rotation / short covering。四个今天的词都用上了：capex、short covering、rotation、higher-for-longer。任何宏观题按「两力对冲 + 当前判断」结构答就行。"
+  }
+ ],
+ "tip": "今天 8 个词里，面试最快能用的三个：headline inflation（开口聊通胀就有 IMF 背书）、short covering（外资行 PM 几乎每场都会问）、agentic AI（咨询面谈 AI 转型的时髦标签）。先用这三个把今天面试的开场白串一遍——30 秒内让面试官知道你是每天看报告的人。"
+}
