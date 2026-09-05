@@ -1,0 +1,187 @@
+{
+ "date": "2026-09-05",
+ "no": 3,
+ "headline": "美联储9月褐皮书：美国经济温和扩张但价格敏感度上升；香港特区政府因AI电子产品出口急升28.9%而上调全年GDP预测至3.5%-4.5%；麦肯锡称银行可借AI超个性化抗衡数字原生对手。",
+ "reports": [
+  {
+   "org": "Federal Reserve",
+   "orgZh": "美国联邦储备委员会",
+   "title": "Beige Book Report: National Summary | September 2026",
+   "tag": "全球宏观",
+   "date": "2026-09-02",
+   "points": [
+    {
+     "en": "Economic activity increased modestly since early July. Ten of the twelve Federal Reserve Districts reported growth in the slight to moderate range; two Districts reported no change.",
+     "zh": "自7月初以来，美国经济活动温和增长；12个联邦储备区中10个呈轻微至温和扩张，2个持平。"
+    },
+    {
+     "en": "Consumer spending grew slightly on balance; reports reflected both heightened price sensitivity on the one hand and solid high-end purchases on the other.",
+     "zh": "消费支出总体小幅增长；报告显示消费者一方面价格敏感度上升，另一方面高端消费仍稳健。"
+    },
+    {
+     "en": "Districts also reported both positive and negative effects of artificial intelligence on labor demand.",
+     "zh": "各地区联储报告人工智能对劳动力需求同时产生正面与负面影响。"
+    },
+    {
+     "en": "Prices increased moderately in eight Districts, with two Districts reporting modest increases, one slight increases, and one robust increases.",
+     "zh": "8个地区物价温和上涨，2个涨幅 modest，1个涨幅轻微，1个涨幅强劲。"
+    }
+   ],
+   "note": "这份褐皮书是美联储9月议息会议前最新的全美经济“体检报告”。对求职者而言，它说明美国当前处于“增长温和、通胀黏性、AI扰动就业”的窗口，港股与全球资金流动仍要看美联储脸色。"
+  },
+  {
+   "org": "International Monetary Fund",
+   "orgZh": "国际货币基金组织",
+   "title": "World Economic Outlook Update, July 2026",
+   "tag": "全球宏观",
+   "date": "2026-07-08",
+   "points": [
+    {
+     "en": "The IMF lowered its 2026 global growth forecast to 3.0%, down 0.1 percentage point from April, reflecting the drag from the Middle East conflict.",
+     "zh": "IMF将2026年全球经济增长预期下调0.1个百分点至3.0%，反映中东冲突的拖累。"
+    },
+    {
+     "en": "Global headline inflation is projected to rise from 4.1% in 2025 to 4.7% in 2026, before declining to 3.9% in 2027.",
+     "zh": "全球整体通胀预计从2025年的4.1%升至2026年的4.7%，2027年回落至3.9%。"
+    },
+    {
+     "en": "China's growth forecast was revised up to 4.6%, supported by strong high-tech manufacturing and related exports.",
+     "zh": "中国增长预期被上调至4.6%，得益于高技术制造业和相关出口表现亮眼。"
+    }
+   ],
+   "note": "IMF 7月更新是理解当前全球宏观背景的关键坐标：增长放缓但未衰退、通胀回升、科技出口部分抵消能源冲击。准备宏观市场面试时，可引用这些数字说明对中美港联动的影响。"
+  },
+  {
+   "org": "HKSAR Government",
+   "orgZh": "香港特别行政区政府",
+   "title": "2026 Half-Yearly Economic Report",
+   "tag": "香港与大中华",
+   "date": "2026-08-14",
+   "points": [
+    {
+     "en": "The Hong Kong SAR government raised its 2026 real GDP growth forecast to 3.5%–4.5%, up from the previous 2.5%–3.5% range, citing strong external trade.",
+     "zh": "香港特区政府将2026年实质本地生产总值增长预测由2.5%-3.5%上调至3.5%-4.5%，理由是对外贸易强劲。"
+    },
+    {
+     "en": "Real GDP grew 5.1% year-on-year in the first half of 2026, the strongest half-yearly performance in nearly five years.",
+     "zh": "2026年上半年实质本地生产总值按年增长5.1%，为近五年最强劲的半年度表现。"
+    },
+    {
+     "en": "Total merchandise exports surged 28.9% year-on-year in real terms in the second quarter, boosted by robust global demand for AI-related electronic products.",
+     "zh": "受全球对人工智能相关电子产品需求旺盛带动，第二季整体货物出口按年实质急升28.9%。"
+    },
+    {
+     "en": "AI-related products now account for about 70% of Hong Kong's total merchandise exports.",
+     "zh": "人工智能相关产品目前约占香港整体货物出口的70%。"
+    }
+   ],
+   "note": "这是香港本地求职者最该关注的官方数据：AI不仅拉动出口，还带动住宅交投创14年季度新高。理解“AI超级周期+北部都会区+人才计划”三条主线，面试时就能讲出香港经济的具体故事。"
+  },
+  {
+   "org": "McKinsey & Company",
+   "orgZh": "麦肯锡",
+   "title": "At last, customers first: AI-powered personalization can help banks create value",
+   "tag": "行业与咨询",
+   "date": "2026-09-03",
+   "points": [
+    {
+     "en": "Banks can better compete against digital-first rivals by using AI to deliver more effective, hyperpersonalized customer engagement.",
+     "zh": "银行可以借助人工智能提供更有效、超个性化的客户互动，从而更好地与数字原生对手竞争。"
+    },
+    {
+     "en": "We have identified four key components of a top-performing, hyperpersonalized CVM model powered by AI: customer data and decisioning, personalized campaigns and journeys, measurement and martech capabilities, and operating model and talent.",
+     "zh": "顶尖AI驱动超个性化客户价值管理（CVM）模型有四大支柱：客户数据与决策、个性化营销与客户旅程、衡量与营销科技能力，以及运营模式与人才。"
+    },
+    {
+     "en": "Executing these efforts well can improve customer engagement by 20 to 30 percent, customer value by 10 to 25 percent, and customer experience by 15 to 25 percent.",
+     "zh": "执行得当可使客户参与度提升20%-30%，客户价值提升10%-25%，客户体验提升15%-25%。"
+    }
+   ],
+   "note": "麦肯锡这篇9月3日文章直接对应银行产品经理与咨询数字转型的面试场景：传统银行如何用AI personalization守住客户、提升钱包份额，是今季最热的答题素材。"
+  }
+ ],
+ "terms": [
+  {
+   "term": "Beige Book",
+   "zh": "褐皮书（美联储经济景气报告）",
+   "defEn": "A qualitative report published by the US Federal Reserve roughly eight times a year, summarizing regional economic conditions based on interviews with business contacts.",
+   "defZh": "美联储每年约发布8次的定性报告，汇总12个联储地区通过访谈企业获得的经济景气情况，是FOMC议息的重要参考。",
+   "exEn": "The Federal Reserve released its September 2026 Beige Book, which noted that economic activity increased modestly since early July.",
+   "exZh": "美联储发布2026年9月褐皮书，指出自7月初以来美国经济活动温和增长。"
+  },
+  {
+   "term": "Price sensitivity",
+   "zh": "价格敏感度",
+   "defEn": "The degree to which consumers change their purchasing behavior in response to price changes; higher sensitivity means demand falls more when prices rise.",
+   "defZh": "消费者对价格变化做出反应、改变购买行为的程度；敏感度越高，涨价时需求下降越多。",
+   "exEn": "Consumer spending grew slightly on balance; reports reflected both heightened price sensitivity on the one hand and solid high-end purchases on the other.",
+   "exZh": "消费支出总体小幅增长；报告显示消费者一方面价格敏感度上升，另一方面高端消费仍稳健。"
+  },
+  {
+   "term": "Input price pressure",
+   "zh": "投入品价格压力",
+   "defEn": "Rising costs for raw materials, energy, transportation, labor, or other inputs that squeeze producers' profit margins.",
+   "defZh": "原材料、能源、运输、人工等生产投入成本上涨，对企业利润造成挤压。",
+   "exEn": "Input price pressures were notably elevated in manufacturing and construction across multiple Districts, with widespread reports of price increases for energy, transportation, and raw materials.",
+   "exZh": "多个地区制造业和建筑业的投入品价格压力明显偏高，能源、运输和原材料涨价普遍存在。"
+  },
+  {
+   "term": "AI-related electronic products",
+   "zh": "人工智能相关电子产品",
+   "defEn": "Electronic goods such as semiconductors, servers, networking equipment, and components used to build or run AI systems and data centers.",
+   "defZh": "用于建设或运行人工智能系统和数据中心的半导体、服务器、网络设备等电子产品。",
+   "exEn": "Total merchandise exports surged 28.9% year-on-year in real terms in the second quarter, boosted by robust global demand for AI-related electronic products.",
+   "exZh": "受全球对人工智能相关电子产品需求旺盛带动，第二季整体货物出口按年实质急升28.9%。"
+  },
+  {
+   "term": "Merchandise exports",
+   "zh": "货物出口",
+   "defEn": "The sale of tangible goods produced in one country to buyers in another country, as opposed to services exports.",
+   "defZh": "一国将有形商品卖给另一国，与服务输出（无形贸易）相对。",
+   "exEn": "AI-related products now account for about 70% of Hong Kong's total merchandise exports.",
+   "exZh": "人工智能相关产品目前约占香港整体货物出口的70%。"
+  },
+  {
+   "term": "Hyperpersonalization",
+   "zh": "超个性化",
+   "defEn": "A marketing and customer-engagement approach that uses AI and real-time data to tailor products, messages, and journeys to individual customers at scale.",
+   "defZh": "一种营销与客户互动方法，利用人工智能和实时数据，大规模地为每位客户定制产品、信息和旅程。",
+   "exEn": "Banks can better compete against digital-first rivals by using AI to deliver more effective, hyperpersonalized customer engagement.",
+   "exZh": "银行可以借助人工智能提供更有效、超个性化的客户互动，从而更好地与数字原生对手竞争。"
+  },
+  {
+   "term": "Customer value management (CVM)",
+   "zh": "客户价值管理",
+   "defEn": "A strategic framework for maximizing the long-term value of customer relationships through data-driven segmentation, targeting, and personalized engagement.",
+   "defZh": "通过数据驱动的细分、精准触达和个性化互动，来最大化客户长期价值的战略框架。",
+   "exEn": "We have identified four key components of a top-performing, hyperpersonalized CVM model powered by AI.",
+   "exZh": "我们已识别出顶尖AI驱动超个性化客户价值管理模型的四大关键组成部分。"
+  },
+  {
+   "term": "Embedded finance",
+   "zh": "嵌入式金融",
+   "defEn": "The integration of financial services such as payments, lending, or insurance into non-financial platforms, apps, or customer journeys.",
+   "defZh": "将支付、贷款、保险等金融服务嵌入到非金融平台、应用或客户旅程中。",
+   "exEn": "By 2030, a significant percentage of banking transactions will take place outside of banks' proprietary channels through embedded finance arrangements.",
+   "exZh": "到2030年，相当一部分银行交易将通过嵌入式金融安排，在银行自有渠道之外完成。"
+  }
+ ],
+ "interview": [
+  {
+   "q": "银行产品经理：如果请你为一家传统银行设计一款用AI提升客户活跃度的产品，你会怎么做？",
+   "en": "I would build an AI-powered customer value management layer on top of the bank's existing data. First, unify transaction, demographic, and behavioral data to create a real-time customer 360 view. Second, use predictive models to identify next-best-actions—such as savings goals, loan pre-approvals, or investment prompts—and deliver them through the mobile app as hyperpersonalized nudges. Third, run A/B tests on campaign copy and journey timing, then scale what works. McKinsey's recent work shows this can lift customer engagement by 20–30% and customer value by 10–25%.",
+   "zh": "我会建议在传统银行现有数据之上搭建AI驱动的客户价值管理层：第一步整合交易、人口和行为数据，形成实时客户全景；第二步用预测模型识别下一步最佳动作，比如储蓄目标、贷款预批或投资建议，并在手机银行以超个性化推送触达；第三步通过A/B测试优化文案和时机，再规模化推广。麦肯锡近期研究显示这可将客户参与度提升20%-30%、客户价值提升10%-25%。"
+  },
+  {
+   "q": "咨询（数字转型）：一家大型银行担心数字原生银行和金融科技抢走客户，你会给出什么转型建议？",
+   "en": "I would advise the bank to move from static segmentation to dynamic, hyperpersonalized engagement. The first priority is to break down data silos and build a unified customer data platform so decisioning happens in real time. Next, redesign key journeys—like onboarding or lending—around customer moments rather than product silos, leveraging AI for personalization and embedded finance partnerships for distribution. Finally, set up an agile operating model with cross-functional pods and clear martech metrics, because McKinsey notes that execution excellence can raise customer experience by 15–25%.",
+   "zh": "我会建议银行从静态客户分群转向动态、超个性化互动。首要任务是打通数据孤岛，建立统一客户数据平台，实现实时决策；其次围绕客户关键时刻（如开户、借贷）而非产品部门重新设计旅程，利用AI个性化，并借助嵌入式金融合作扩大触点；最后用跨职能敏捷小组和清晰的营销科技指标来落地，因为麦肯锡指出卓越执行可将客户体验提升15%-25%。"
+  },
+  {
+   "q": "宏观市场：美联储9月褐皮书和香港GDP上调，对港股和全球资金流动有什么启示？",
+   "en": "The September Beige Book shows the US economy is still expanding modestly but faces sticky price pressures and elevated uncertainty from energy costs and geopolitics. This keeps the Fed in a hawkish-or-hold posture, which affects global liquidity and dollar funding costs. At the same time, Hong Kong upgraded its 2026 GDP forecast to 3.5–4.5% because AI-related electronics now make up about 70% of merchandise exports and grew 63.7% in Q2. For Hong Kong equities, this means the growth story is supported by real export demand, but valuations and flows still depend on whether US rates stay higher for longer. The key risk is a renewed oil shock or Fed repricing.",
+   "zh": "9月褐皮书显示美国经济仍温和扩张，但价格压力黏性和能源、地缘政治不确定性让美联储维持鹰派或按兵不动，这会影响全球流动性和美元融资成本。同时香港因AI电子产品占货物出口约70%、Q2价值急升63.7%，将全年GDP预测上调至3.5%-4.5%。对港股而言，增长故事有真实出口需求支撑，但估值和资金流向仍取决于美国利率是否长期维持高位，主要风险是油价冲击或美联储重新定价。"
+  }
+ ],
+ "tip": "Build a personal vocabulary log for each report and practice explaining one chart or data point aloud—fluency comes from reuse, not just reading."
+}
