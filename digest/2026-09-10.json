@@ -1,0 +1,179 @@
+{
+ "date": "2026-09-10",
+ "no": 4,
+ "headline": "IMF 总裁 Georgieva 在 G20 警示全球公共债务已升至 GDP 的近 100%、能源冲击未结束；BIS 警告稳定币若大行扩张将动摇银行融资；高盛下调未来 12 个月美股回报至中至高单位数，因 30 年美债收益率站上 5.3%。",
+ "reports": [
+  {
+   "org": "International Monetary Fund",
+   "orgZh": "国际货币基金组织",
+   "title": "Remarks by Managing Director Kristalina Georgieva at the G20 Finance Ministers and Central Bank Governors Meeting",
+   "tag": "全球宏观",
+   "date": "2026-09-02",
+   "points": [
+    {
+     "en": "The global economic outlook for 2026 has strengthened to around 3%, but the world remains vulnerable to an unfinished energy shock, historically high public debt, stalled disinflation and uncertainty over the economic and financial effects of artificial intelligence.",
+     "zh": "2026 年全球经济前景已稳固在 3% 左右，但世界仍面临未结束的能源冲击、史上最高的公共债务、停滞的去通胀以及人工智能经济与金融效应的多重不确定性。"
+    },
+    {
+     "en": "Investment related to artificial intelligence had also supported economic activity, particularly in the United States, with spending on power infrastructure needed to meet AI-related energy demand emerging as an additional source of growth.",
+     "zh": "人工智能相关投资也支撑了经济活动，尤其在美国；为满足 AI 能耗而投入的电力基础设施支出，正成为新的增长来源。"
+    },
+    {
+     "en": "Public debt has reached almost 100% of global GDP, exceeding levels seen after World War II and continuing to rise, with debt jumping sharply during major shocks and experiencing little or no reduction afterward.",
+     "zh": "公共债务已逼近全球 GDP 的 100%，超过二战后水平且继续上行；每当重大冲击来临时，债务都大幅跃升而几乎不回落。"
+    }
+   ],
+   "note": "这是 9 月初各大央行议息前的关键坐标：能源、AI 与债务三股力量同时拉扯。求职者若要进投行或银行 PM 面试，可引用“公共债务/GDP≈100%”这一数字说明全球利率长期偏高的底层逻辑。"
+  },
+  {
+   "org": "Bank for International Settlements",
+   "orgZh": "国际清算银行",
+   "title": "Annual Economic Report 2026 — Anchoring Trust in Money: Innovation Beyond Stablecoins",
+   "tag": "行业与咨询",
+   "date": "2026-06-23",
+   "points": [
+    {
+     "en": "Current stablecoin designs fall short in terms of the key properties that ensure trust in money, in particular singleness, or the ability to redeem different forms of money exactly at par in exchange for central bank money.",
+     "zh": "现有稳定币在保障货币信任的核心属性上仍有缺陷，尤其是“单一性”——即不同形态的货币能否与央行货币严格按面值赎回。"
+    },
+    {
+     "en": "Wider stablecoin adoption could usher in significant changes in bank funding and credit provision and potentially pose financial stability challenges, with high global demand for stablecoins making capital flows more volatile and challenging monetary sovereignty.",
+     "zh": "若稳定币被广泛采用，可能改变银行融资与信贷扩张方式，并带来金融稳定风险；美元稳定币需求快速增长还会加剧资本流动波动、挑战小型经济体的货币主权。"
+    },
+    {
+     "en": "A 'unified ledger' that integrates different forms of tokenised money in the same venue could help harness the benefits of digital innovation while preserving trust in money.",
+     "zh": "在同一载体上整合多种代币化货币的“统一账本”，能在保留货币信任的前提下发挥数字化创新红利。"
+    }
+   ],
+   "note": "BIS 给稳定币与代币化划下红线：技术红利必须嵌入两级体系（央行+商业银行），不能颠覆货币信任。咨询面试常被追问“Web3/稳定币对银行的冲击”，这份报告就是最佳答卷素材。"
+  },
+  {
+   "org": "Goldman Sachs",
+   "orgZh": "高盛",
+   "title": "Global Equity Strategy: S&P 500 Returns Set to Slow as Yields Climb",
+   "tag": "行业与咨询",
+   "date": "2026-09-02",
+   "points": [
+    {
+     "en": "With Treasury yields at multi-decade highs, Goldman Sachs is cautioning that U.S. stock market gains are likely to slow sharply; the 30-year Treasury yield has surpassed 5.3%, a level last seen in 2007.",
+     "zh": "在美债收益率处于数十年高位之际，高盛警示美股涨幅将明显放缓；30 年期美债收益率已突破 5.3%，上一次见到该水平是 2007 年。"
+    },
+    {
+     "en": "Investors now face a new equation: equities must generate substantially higher earnings to justify their valuations, or risk losing capital to the bond market's safer, more attractive yields.",
+     "zh": "投资者如今面对一道新公式：股市必须贡献远高于以往的盈利才能支撑估值，否则资金将被收益率更具吸引力的债市吸走。"
+    },
+    {
+     "en": "Goldman Sachs Chief Global Equity Strategist Peter Oppenheimer now projects mid- to high-single-digit returns for major stock indexes over the next 12 months, a notable slowdown from the double-digit gains of recent years.",
+     "zh": "高盛首席全球股票策略师 Peter Oppenheimer 预计，未来 12 个月主要股指回报将回落至中至高单位数，较近年的双位数涨幅明显减速。"
+    }
+   ],
+   "note": "高盛从“30 年 5.3%”切入，把今年标普 12% 涨幅和未来中至高单位数回报放在同一张图里。对求职者而言，这意味着资本市场进入“久期重估 + 选股为王”的阶段，面试 PM 岗可借此谈资产配置产品逻辑。"
+  },
+  {
+   "org": "Deloitte",
+   "orgZh": "德勤",
+   "title": "Banking and Capital Markets Outlook 2026",
+   "tag": "行业与咨询",
+   "date": "2025-10-30",
+   "points": [
+    {
+     "en": "Only 4 of 50 banks analyzed by Evident in 2025 reported realized ROI from artificial intelligence in investment banking use cases, a finding Deloitte cites in its 2026 banking and capital markets outlook.",
+     "zh": "Evident 2025 年评估的 50 家银行中，仅 4 家在投行类 AI 用例上实现了真实回报，这一数据被德勤 2026 年银行与资本市场展望引用。"
+    },
+    {
+     "en": "Banks are stuck in experimentation. Treat AI as core infrastructure, prioritise governance, data quality and scale two-to-three use cases.",
+     "zh": "银行在“试验阶段”卡住了；应把 AI 视作核心基础设施，优先治理与数据质量，挑两到三个用例规模化。"
+    },
+    {
+     "en": "More than 90% of data users at banks reported that the data they need is often unavailable or takes too long to retrieve.",
+     "zh": "超过 90% 的银行数据用户表示，他们所需的数据常常拿不到或需要等很久。"
+    }
+   ],
+   "note": "德勤报告戳破了 AI 神话：80% 的银行还没把 AI 真正变成营收，瓶颈在数据治理而非算法。香港银行业正大力招 PM 推动数字化转型，这条对求职者简直量身定做：面试时可谈“数据底座+用例规模化”的方法论。"
+  }
+ ],
+ "terms": [
+  {
+   "term": "stablecoin",
+   "zh": "稳定币",
+   "defEn": "A digital token that aims to maintain a stable value by pegging its price to a reference asset such as a fiat currency or a basket of short-term securities.",
+   "defZh": "稳定币是一种通过锚定法币或一篮子短期证券来维持价格稳定的代币。",
+   "exEn": "Current stablecoin designs fall short in terms of the key properties that ensure trust in money, in particular singleness.",
+   "exZh": "现有稳定币在保障货币信任的核心属性上仍有缺陷，尤其是单一性。"
+  },
+  {
+   "term": "singleness of money",
+   "zh": "货币的单一性",
+   "defEn": "The ability for different forms of money to be exchanged at exact par value against central bank money, so users never need to ask about the issuer.",
+   "defZh": "指不同形态的货币能与央行货币严格按面值互换，使用户无须追问发行方。",
+   "exEn": "Stablecoins lack singleness — the ability for different forms of money to be exchanged at exact par value against central bank money.",
+   "exZh": "稳定币缺乏单一性，无法像央行货币那样按面值无缝互换。"
+  },
+  {
+   "term": "two-tier monetary system",
+   "zh": "两级货币体系",
+   "defEn": "An arrangement in which the central bank issues reserves at the top tier and commercial banks provide money and credit to the public at the second tier.",
+   "defZh": "央行在上层发行储备货币、商业银行在下层向公众提供货币与信用的两层制度安排。",
+   "exEn": "Bringing tokenisation into the current two-tier system can open new possibilities such as programmable payments.",
+   "exZh": "把代币化嵌入现行两级体系，可以催生可编程支付等新可能。"
+  },
+  {
+   "term": "yield curve steepening",
+   "zh": "收益率曲线陡峭化",
+   "defEn": "A situation in which long-term bond yields rise faster than short-term yields, widening the gap between the two ends of the curve.",
+   "defZh": "指长期债券收益率比短期涨得更快，长短端利差扩大的现象。",
+   "exEn": "The 30-year Treasury yield hovered around 5.259%, while the 2-year yield was approximately 4.369%, reflecting a steepening yield curve.",
+   "exZh": "30 年期美债收益率约 5.259%，2 年期约 4.369%，反映出收益率曲线陡峭化。"
+  },
+  {
+   "term": "duration risk",
+   "zh": "久期风险",
+   "defEn": "The sensitivity of a bond or bond portfolio's price to a change in interest rates; longer duration means greater price swings when yields move.",
+   "defZh": "指债券或债券组合价格对利率变动的敏感度，久期越长、利率波动时价格波动越大。",
+   "exEn": "The firm is advising clients to extend duration in fixed-income portfolios as the Fed is expected to cut.",
+   "exZh": "该机构建议客户在美联储降息预期下延长固收组合的久期。"
+  },
+  {
+   "term": "return on tangible equity (ROTE)",
+   "zh": "有形股本回报率",
+   "defEn": "A profitability ratio that measures net income as a share of shareholders' equity excluding intangible assets such as goodwill.",
+   "defZh": "衡量净利润占剔除商誉等无形资产后的股东权益比例，反映银行核心盈利能力。",
+   "exEn": "McKinsey's Global Banking Annual Review 2026 preview reports return on tangible equity falling from 12.4% in 2024 to 11.8% in 2025.",
+   "exZh": "麦肯锡《2026 全球银行业年度回顾》预告显示，有形股本回报率从 2024 年的 12.4% 降至 2025 年的 11.8%。"
+  },
+  {
+   "term": "minimum viable bank (MVB)",
+   "zh": "最小可行银行",
+   "defEn": "The smallest set of banking services and operations a bank must keep running during a disruption in order to continue serving customers and meet regulatory duties.",
+   "defZh": "指银行在重大中断下仍需维持运转的最小服务与运营集合，以保障客户与监管义务。",
+   "exEn": "Step back and think strategically: what is your minimum viable bank (MVB) to survive and continue to serve customers in a disruption?",
+   "exZh": "退一步看：你的“最小可行银行”是什么，才能在中断中活下来、继续服务客户？"
+  },
+  {
+   "term": "embedded finance",
+   "zh": "嵌入式金融",
+   "defEn": "The integration of financial services such as payments, lending or insurance into non-financial customer journeys through APIs and platform partnerships.",
+   "defZh": "通过 API 与平台合作，把支付、贷款、保险等金融服务嵌入非金融场景的客户旅程。",
+   "exEn": "The path forward centres on two core innovations: digital origination and embedded finance, both powered by AI.",
+   "exZh": "未来路径围绕两大创新：数字贷款发起与嵌入式金融，二者都由 AI 驱动。"
+  }
+ ],
+ "interview": [
+  {
+   "q": "如果你是招商永隆银行的产品经理，如何设计一款针对大湾区中小企业、嵌入 AI 信用评估的贷款产品？",
+   "en": "I would start with a digital origination journey on a modular platform, plug an AI-powered credit decisioning engine into the existing two-tier system, and pair it with a real-time risk dashboard. I would pilot the product with one SME segment, collect measurable results on cost-to-serve and approval time, then scale to two more use cases — exactly the playbook Deloitte recommends for breaking out of experimentation.",
+   "zh": "思路拆三步：① 在模块化平台上搭数字贷款发起流程，把 AI 信用决策引擎嵌进银行现有两级体系；② 配一个实时风险仪表盘；③ 先挑一个中小企业细分试点，跑出成本与审批时效数据，再扩到两到三个用例——这正是德勤建议的“跳出试验阶段”打法。"
+  },
+  {
+   "q": "咨询面试题：一家香港零售银行请你评估“是否要发行自家稳定币”，你会从哪几个维度切入？",
+   "en": "I would frame it around the BIS 2026 Annual Economic Report: first, singleness — can our token be redeemed one-for-one at par with HKD reserves? Second, regulatory clarity under HKMA's proposed stablecoin regime. Third, funding and liquidity — how would large redemptions affect our deposit base? And fourth, use cases — payments versus investment. Without clear answers on these four, the move should stay in a sandbox.",
+   "zh": "套用 BIS 2026 年度报告框架：① 单一性——我们的代币能否与港元储备 1:1 按面值赎回？② 金管局稳定币监管框架下的合规性；③ 大额赎回对存款基础的冲击；④ 用例定位——是支付还是投资工具。这四点没答案前，应留在沙盒内。"
+  },
+  {
+   "q": "宏观面试题：当前美债 30 年收益率站上 5.3%，对香港股市与楼市意味着什么？",
+   "en": "When the 30-year US Treasury yield clears 5.3%, global capital is repriced: Hong Kong banks face higher funding costs, mortgage rates drift towards 7%, and HSI heavyweights with rich valuations get squeezed. But Hong Kong's AI-export tailwind and stable HKD peg cushion the blow. I would tell clients to favour dividend payers and short-duration credit, and to stay neutral on property until the Fed pivots.",
+   "zh": "30 年美债破 5.3% 等于全球资金定价重估：港银融资成本上升，按揭利率向 7% 靠拢，高估值恒指权重股承压；但 AI 出口与联系汇率仍是缓冲。建议客户偏向高股息与短久期信用，对楼市保持中性直至美联储转向。"
+  }
+ ],
+ "tip": "今天的关键词是 “trust in money”——把货币信任、债券收益率与 AI 银行用例串起来读，你会发现面试题都在问同一件事：当传统锚点松动时，谁来重建信任。"
+}
